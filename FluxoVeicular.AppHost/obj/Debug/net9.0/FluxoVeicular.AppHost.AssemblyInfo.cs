@@ -18,15 +18,15 @@ using System.Reflection;
     "xt\\")]
 [assembly: System.Reflection.AssemblyMetadata("dcpbinpath", "C:\\Users\\beatr\\.nuget\\packages\\aspire.hosting.orchestration.win-x64\\9.3.1\\tools\\e" +
     "xt\\bin\\")]
-[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost")]
+[assembly: System.Reflection.AssemblyMetadata("apphostprojectpath", "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost")]
 [assembly: System.Reflection.AssemblyMetadata("apphostprojectname", "FluxoVeicular.AppHost.csproj")]
 [assembly: System.Reflection.AssemblyMetadata("aspiredashboardpath", "C:\\Users\\beatr\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.3.1\\tools\\Aspire.Da" +
     "shboard.exe")]
-[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\obj\\")]
+[assembly: System.Reflection.AssemblyMetadataAttribute("apphostprojectbaseintermediateoutputpath", "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\obj\\")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoVeicular.AppHost")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1e0d85886ea5304c4870fc062a91feedbe8411bd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoVeicular.AppHost")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoVeicular.AppHost")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

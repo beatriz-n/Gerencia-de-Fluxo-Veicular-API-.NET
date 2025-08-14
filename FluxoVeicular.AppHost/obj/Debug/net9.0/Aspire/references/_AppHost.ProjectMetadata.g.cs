@@ -8,5 +8,5 @@ namespace Projects;
 public class FluxoVeicular_AppHost
 {
     private FluxoVeicular_AppHost() { }
-    public static string ProjectPath => """C:\TCC\FluxoVeicular\FluxoVeicular.AppHost""";
+    public static string ProjectPath => """C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.AppHost""";
 }

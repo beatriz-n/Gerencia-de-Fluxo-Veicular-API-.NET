@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "vt+KFi04xa8=",
+  "dgSpecHash": "/UMmArRpmxc=",
   "success": true,
-  "projectFilePath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
+  "projectFilePath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\beatr\\.nuget\\packages\\aspire.dashboard.sdk.win-x64\\9.3.1\\aspire.dashboard.sdk.win-x64.9.3.1.nupkg.sha512",
     "C:\\Users\\beatr\\.nuget\\packages\\aspire.hosting\\9.3.1\\aspire.hosting.9.3.1.nupkg.sha512",

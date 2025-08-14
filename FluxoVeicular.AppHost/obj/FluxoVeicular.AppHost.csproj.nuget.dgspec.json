@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj": {}
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj": {}
   },
   "projects": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj": {
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
+        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
         "projectName": "FluxoVeicular.AppHost",
-        "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
+        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\FluxoVeicular.AppHost.csproj",
         "packagesPath": "C:\\Users\\beatr\\.nuget\\packages\\",
-        "outputPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.AppHost\\obj\\",
+        "outputPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.AppHost\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

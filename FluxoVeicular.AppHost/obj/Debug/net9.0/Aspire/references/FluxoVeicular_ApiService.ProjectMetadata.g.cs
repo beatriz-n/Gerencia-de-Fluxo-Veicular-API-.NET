@@ -7,5 +7,5 @@ namespace Projects;
 [global::System.Diagnostics.DebuggerDisplay("Type = {GetType().Name,nq}, ProjectPath = {ProjectPath}")]
 public class FluxoVeicular_ApiService : global::Aspire.Hosting.IProjectMetadata
 {
-    public string ProjectPath => """C:\TCC\FluxoVeicular\FluxoVeicular.ApiService\FluxoVeicular.ApiService.csproj""";
+    public string ProjectPath => """C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\FluxoVeicular.ApiService.csproj""";
 }

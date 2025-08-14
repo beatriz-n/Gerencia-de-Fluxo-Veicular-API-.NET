@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {}
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {}
   },
   "projects": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
+        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
         "projectName": "FluxoVeicular.ServiceDefaults",
-        "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
+        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
         "packagesPath": "C:\\Users\\beatr\\.nuget\\packages\\",
-        "outputPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\obj\\",
+        "outputPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
