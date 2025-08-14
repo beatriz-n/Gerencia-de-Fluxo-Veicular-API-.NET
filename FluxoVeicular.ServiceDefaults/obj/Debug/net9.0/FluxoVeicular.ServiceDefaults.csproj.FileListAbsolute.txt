@@ -1,0 +1,14 @@
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.csproj.AssemblyReference.cache
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.GeneratedMSBuildEditorConfig.editorconfig
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.AssemblyInfoInputs.cache
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.AssemblyInfo.cs
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.csproj.CoreCompileInputs.cache
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.deps.json
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.dll
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.pdb
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.dll
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\refint\FluxoVeicular.ServiceDefaults.dll
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.pdb
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\ref\FluxoVeicular.ServiceDefaults.dll
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.runtimeconfig.json
+C:\TCC\FluxoVeicular\FluxoVeicular.ServiceDefaults\obj\Debug\net9.0\FluxoVeicular.ServiceDefaults.genruntimeconfig.cache
