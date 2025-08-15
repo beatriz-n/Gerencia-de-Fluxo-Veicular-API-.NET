@@ -63,11 +63,11 @@
             },
             "Microsoft.Extensions.Http.Resilience": {
               "target": "Package",
-              "version": "[9.4.0, )"
+              "version": "[9.8.0, )"
             },
             "Microsoft.Extensions.ServiceDiscovery": {
               "target": "Package",
-              "version": "[9.3.1, )"
+              "version": "[9.4.1, )"
             },
             "Npgsql.EntityFrameworkCore.PostgreSQL": {
               "target": "Package",
