@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoVeicular.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e821d9eb9c97665c8e238c1e98f430cf5a044ef8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d7492f6b552db28793c62e31b2bf4f719d427aea")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoVeicular.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoVeicular.ServiceDefaults")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

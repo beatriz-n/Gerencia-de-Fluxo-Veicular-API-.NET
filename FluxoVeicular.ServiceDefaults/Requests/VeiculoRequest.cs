@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿
+using System.Text.Json.Serialization;
 
 namespace FluxoVeicular.ServiceDefaults.Requests
 {
     public class VeiculoRequest
     {
-        public Guid Id { get; set; }
-        public bool Acesso { get; set; }
+        [JsonIgnore]
+        public Guid Id { get; set; } = Guid.NewGuid();
         public string? Placa { get; set; }
         public string? Cor { get; set; }
     }

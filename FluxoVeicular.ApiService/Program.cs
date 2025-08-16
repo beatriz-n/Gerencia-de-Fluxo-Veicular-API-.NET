@@ -1,4 +1,5 @@
 using FluxoVeicular.ServiceDefaults.Context;
+using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
@@ -12,6 +13,7 @@ builder.Services.AddDbContext<FluxoVeicularContext>(options =>
 {
     options.UseNpgsql(connectionString);
 });
+builder.Services.AddScoped<VeiculoPlacaService>();
 
 builder.Services.AddControllers();
 builder.Services.AddProblemDetails();
