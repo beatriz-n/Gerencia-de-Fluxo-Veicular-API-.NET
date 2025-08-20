@@ -1,0 +1,87 @@
+﻿@page "/veiculos"
+@inject NavigationManager Navigation
+@inject ISnackbar Snackbar
+
+<PageTitle>Veículos</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+
+    <MudGrid AlignItems="Center">
+        <MudItem xs="6">
+            <MudText Typo="Typo.h5" GutterBottom>Lista de Veículos</MudText>
+        </MudItem>
+        <MudItem xs="6" Class="d-flex justify-end">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/veiculos/cadastro" StartIcon="@Icons.Material.Filled.Add">
+                Novo Veículo
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+
+    <MudTable Items="_veiculos" Hover="true" Bordered="true" Striped="true" Class="mt-4">
+        <HeaderContent>
+            <MudTh>Placa</MudTh>
+            <MudTh>Modelo</MudTh>
+            <MudTh>Ano</MudTh>
+            <MudTh>Status</MudTh>
+            <MudTh>Ações</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Placa">@context.Placa</MudTd>
+            <MudTd DataLabel="Modelo">@context.Modelo</MudTd>
+            <MudTd DataLabel="Ano">@context.Ano</MudTd>
+            <MudTd DataLabel="Status">
+@*                 <MudChip Color="@GetStatusColor(context.Status)" Variant="Variant.Filled" Size="Size.Small">
+                    @context.Status
+                </MudChip> *@
+            </MudTd>
+            <MudTd DataLabel="Ações">
+                <MudIconButton Icon="@Icons.Material.Filled.Visibility" Color="Color.Success" Size="Size.Medium"
+                               OnClick="@(() => VisualizarVeiculo(context))" />
+                <MudIconButton Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" Size="Size.Medium"
+                               OnClick="@(() => EditarVeiculo(context))" />
+                <MudIconButton Icon="@Icons.Material.Filled.Delete" Color="Color.Error" Size="Size.Medium"
+                               OnClick="@(() => ExcluirVeiculo(context))" />
+            </MudTd>
+        </RowTemplate>
+    </MudTable>
+
+</MudContainer>
+
+@code {
+    private List<Veiculo> _veiculos = new()
+    {
+        new Veiculo { Placa = "ABC-1234", Modelo = "Civic", Ano = 2020, Status="Ativo" },
+        new Veiculo { Placa = "XYZ-5678", Modelo = "Corolla", Ano = 2019, Status="Inativo" },
+        new Veiculo { Placa = "JHK-4321", Modelo = "Onix", Ano = 2021, Status="Ativo" }
+    };
+
+    public class Veiculo
+    {
+        public string Placa { get; set; } = "";
+        public string Modelo { get; set; } = "";
+        public int Ano { get; set; }
+        public string Status { get; set; } = "Ativo";
+    }
+
+
+    void VisualizarVeiculo(Veiculo veiculo)
+    {
+        Snackbar.Add($"Visualizando veículo {veiculo.Placa}", Severity.Info);
+    }
+
+    void EditarVeiculo(Veiculo veiculo)
+    {
+        Snackbar.Add($"Editando veículo {veiculo.Placa}", Severity.Warning);
+    }
+
+    void ExcluirVeiculo(Veiculo veiculo)
+    {
+        _veiculos.Remove(veiculo);
+        Snackbar.Add($"Veículo {veiculo.Placa} excluído com sucesso!", Severity.Error);
+    }
+
+    Color GetStatusColor(string status)
+    {
+        return status == "Ativo" ? Color.Success : Color.Default;
+    }
+}

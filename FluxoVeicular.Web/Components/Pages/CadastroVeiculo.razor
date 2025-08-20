@@ -1,0 +1,70 @@
+﻿@page "/veiculos/cadastro"
+<PageTitle>Cadastro de Veículo</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Medium" Class="pa-4">
+
+    <MudText Typo="Typo.h5" GutterBottom>Cadastro de Veículo</MudText>
+
+    <MudForm @ref="_form" Validated="OnValidSubmit">
+
+        <MudTextField @bind-Value="_veiculo.Placa" Label="Placa" Required="true"
+                      RequiredError="Placa é obrigatória" />
+
+        <MudTextField @bind-Value="_veiculo.Modelo" Label="Modelo" Required="true"
+                      RequiredError="Modelo é obrigatório" />
+
+        <MudNumericField @bind-Value="_veiculo.Ano" Label="Ano" Required="true"
+                         RequiredError="Ano é obrigatório" Min="1900" Max="2099" />
+
+        <MudSelect @bind-Value="_veiculo.Status" Label="Status" Required="true"
+                   RequiredError="Selecione o status">
+@*             <MudSelectItem Value="Ativo">Ativo</MudSelectItem>
+            <MudSelectItem Value="Inativo">Inativo</MudSelectItem> *@
+        </MudSelect>
+
+        <MudSpacer />
+
+        <MudGrid Spacing="2">
+            <MudItem xs="6">
+                <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarVeiculo">
+                    Salvar
+                </MudButton>
+            </MudItem>
+            <MudItem xs="6">
+                <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="/veiculos">
+                    Cancelar
+                </MudButton>
+            </MudItem>
+        </MudGrid>
+
+    </MudForm>
+</MudContainer>
+
+@code {
+    private MudForm? _form;
+    private Veiculo _veiculo = new();
+
+    private async Task SalvarVeiculo()
+    {
+        if (_form is not null)
+        {
+            await _form.Validate();
+            if (_form.IsValid)
+            {
+                // Aqui você pode salvar em uma lista ou enviar para API
+                Snackbar.Add($"Veículo {_veiculo.Placa} cadastrado com sucesso!", Severity.Success);
+                _veiculo = new Veiculo(); // Limpa o formulário
+            }
+        }
+    }
+
+    [Inject] private ISnackbar Snackbar { get; set; } = default!;
+
+    public class Veiculo
+    {
+        public string Placa { get; set; } = "";
+        public string Modelo { get; set; } = "";
+        public int Ano { get; set; }
+        public string Status { get; set; } = "Ativo";
+    }
+}

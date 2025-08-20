@@ -1,0 +1,11 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

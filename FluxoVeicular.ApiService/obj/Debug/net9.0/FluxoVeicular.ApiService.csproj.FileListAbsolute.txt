@@ -229,6 +229,9 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Polly.Core.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Polly.Extensions.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Polly.RateLimiting.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.CodeDom.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.Composition.AttributedModel.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.Composition.Convention.dll
@@ -319,13 +322,10 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.development.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.build.endpoints.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVei.80B04E42.Up2Date
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\refint\FluxoVeicular.ApiService.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.pdb
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.genruntimeconfig.cache
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\ref\FluxoVeicular.ApiService.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt

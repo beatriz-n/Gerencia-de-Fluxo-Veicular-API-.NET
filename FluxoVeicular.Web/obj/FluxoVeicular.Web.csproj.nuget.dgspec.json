@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj": {}
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj": {}
   },
   "projects": {
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
+        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
         "projectName": "FluxoVeicular.ServiceDefaults",
-        "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
+        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
         "packagesPath": "C:\\Users\\beatr\\.nuget\\packages\\",
-        "outputPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\obj\\",
+        "outputPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -51,13 +51,27 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.8, )"
+            },
             "Microsoft.Extensions.Http.Resilience": {
               "target": "Package",
-              "version": "[9.4.0, )"
+              "version": "[9.8.0, )"
             },
             "Microsoft.Extensions.ServiceDiscovery": {
               "target": "Package",
-              "version": "[9.3.1, )"
+              "version": "[9.4.1, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             },
             "OpenTelemetry.Exporter.OpenTelemetryProtocol": {
               "target": "Package",
@@ -103,14 +117,14 @@
         }
       }
     },
-    "C:\\TCC\\FluxoVeicular\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj": {
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
+        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
         "projectName": "FluxoVeicular.Web",
-        "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
+        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
         "packagesPath": "C:\\Users\\beatr\\.nuget\\packages\\",
-        "outputPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.Web\\obj\\",
+        "outputPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Web\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -132,8 +146,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
-                "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj"
+              "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
+                "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj"
               }
             }
           }
@@ -153,6 +167,12 @@
       "frameworks": {
         "net9.0": {
           "targetAlias": "net9.0",
+          "dependencies": {
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[8.11.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
