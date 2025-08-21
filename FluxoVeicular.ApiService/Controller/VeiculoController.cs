@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 namespace FluxoVeicular.ApiService.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/veiculo")]
     public class VeiculosController : ControllerBase
     {
         private readonly FluxoVeicularContext _context;

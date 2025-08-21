@@ -1,5 +1,6 @@
 using FluxoVeicular.Web;
 using FluxoVeicular.Web.Components;
+using FluxoVeicular.Web.ServiceApi;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,7 +13,7 @@ builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
 builder.Services.AddOutputCache();
-
+builder.Services.AddScoped<VeiculoServiceApi>();
 var app = builder.Build();
 
 app.UseHttpsRedirection();

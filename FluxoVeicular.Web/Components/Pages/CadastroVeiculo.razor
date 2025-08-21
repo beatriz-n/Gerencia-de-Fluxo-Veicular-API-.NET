@@ -1,4 +1,4 @@
-﻿@page "/veiculos/cadastro"
+﻿@page "/cadastroveiculo"
 <PageTitle>Cadastro de Veículo</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.Medium" Class="pa-4">
@@ -10,32 +10,23 @@
         <MudTextField @bind-Value="_veiculo.Placa" Label="Placa" Required="true"
                       RequiredError="Placa é obrigatória" />
 
-        <MudTextField @bind-Value="_veiculo.Modelo" Label="Modelo" Required="true"
+        <MudTextField @bind-Value="_veiculo.Modelo" Label="Cor" Required="true"
                       RequiredError="Modelo é obrigatório" />
 
-        <MudNumericField @bind-Value="_veiculo.Ano" Label="Ano" Required="true"
-                         RequiredError="Ano é obrigatório" Min="1900" Max="2099" />
-
-        <MudSelect @bind-Value="_veiculo.Status" Label="Status" Required="true"
-                   RequiredError="Selecione o status">
-@*             <MudSelectItem Value="Ativo">Ativo</MudSelectItem>
-            <MudSelectItem Value="Inativo">Inativo</MudSelectItem> *@
-        </MudSelect>
-
-        <MudSpacer />
-
-        <MudGrid Spacing="2">
-            <MudItem xs="6">
+        <MudGrid Justify="Justify.SpaceBetween">
+            <MudItem>
                 <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarVeiculo">
                     Salvar
                 </MudButton>
             </MudItem>
-            <MudItem xs="6">
+            <MudItem>
                 <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="/veiculos">
                     Cancelar
                 </MudButton>
             </MudItem>
         </MudGrid>
+
+
 
     </MudForm>
 </MudContainer>

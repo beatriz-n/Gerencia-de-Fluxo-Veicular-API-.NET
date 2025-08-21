@@ -5,6 +5,10 @@
       {
         "Path": "FluxoVeicular.Web\\FluxoVeicular.Web.csproj",
         "Action": "Start"
+      },
+      {
+        "Path": "FluxoVeicular.ApiService\\FluxoVeicular.ApiService.csproj",
+        "Action": "Start"
       }
     ]
   }
