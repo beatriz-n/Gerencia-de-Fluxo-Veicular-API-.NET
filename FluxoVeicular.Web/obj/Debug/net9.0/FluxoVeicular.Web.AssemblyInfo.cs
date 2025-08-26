@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoVeicular.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cb763de9dfedf22f4f3a754a9895201ea8a58ac6")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6ab7e7a5532928cb51613d398db7373630b259fd")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoVeicular.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoVeicular.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

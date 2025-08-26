@@ -8,6 +8,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.ServiceDefaul
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.Web", "FluxoVeicular.Web\FluxoVeicular.Web.csproj", "{03211D3F-E8CD-51C9-041D-C7520BCD369B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.App", "FluxoVeicular.App\FluxoVeicular.App.csproj", "{9AC06F13-9D4D-04F7-4295-DECB79CBD282}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.App.Client", "FluxoVeicular.App.Client\FluxoVeicular.App.Client.csproj", "{C751D96A-5CF0-FD53-E81C-F908B647F81A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +30,14 @@ Global
 		{03211D3F-E8CD-51C9-041D-C7520BCD369B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{03211D3F-E8CD-51C9-041D-C7520BCD369B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{03211D3F-E8CD-51C9-041D-C7520BCD369B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

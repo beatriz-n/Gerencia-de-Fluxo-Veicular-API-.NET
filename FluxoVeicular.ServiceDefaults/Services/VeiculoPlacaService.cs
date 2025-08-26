@@ -1,7 +1,6 @@
 ﻿
+using FluxoVeicular.App.Client.Response;
 using FluxoVeicular.ServiceDefaults.Context;
-using FluxoVeicular.ServiceDefaults.Entities;
-using FluxoVeicular.ServiceDefaults.Responses;
 using Microsoft.EntityFrameworkCore;
 
 namespace FluxoVeicular.ServiceDefaults.Services

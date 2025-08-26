@@ -1873,7 +1873,7 @@
           "buildTransitive/net6.0/_._": {}
         }
       },
-      "FluxoVeicular.Client/1.0.0": {
+      "FluxoVeicular.App.Client/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v9.0",
         "dependencies": {
@@ -1881,10 +1881,10 @@
           "MudBlazor": "8.0.0"
         },
         "compile": {
-          "bin/placeholder/FluxoVeicular.Client.dll": {}
+          "bin/placeholder/FluxoVeicular.App.Client.dll": {}
         },
         "runtime": {
-          "bin/placeholder/FluxoVeicular.Client.dll": {}
+          "bin/placeholder/FluxoVeicular.App.Client.dll": {}
         }
       }
     }
@@ -4978,15 +4978,15 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "FluxoVeicular.Client/1.0.0": {
+    "FluxoVeicular.App.Client/1.0.0": {
       "type": "project",
-      "path": "../../FluxoVeicular/FluxoVeicular/FluxoVeicular.Client/FluxoVeicular.Client.csproj",
-      "msbuildProject": "../../FluxoVeicular/FluxoVeicular/FluxoVeicular.Client/FluxoVeicular.Client.csproj"
+      "path": "../FluxoVeicular.App.Client/FluxoVeicular.App.Client.csproj",
+      "msbuildProject": "../FluxoVeicular.App.Client/FluxoVeicular.App.Client.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net9.0": [
-      "FluxoVeicular.Client >= 1.0.0",
+      "FluxoVeicular.App.Client >= 1.0.0",
       "Microsoft.EntityFrameworkCore >= 9.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 9.0.8",
       "Microsoft.Extensions.Http.Resilience >= 9.8.0",
@@ -5032,8 +5032,8 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "C:\\TCC\\FluxoVeicular\\FluxoVeicular\\FluxoVeicular.Client\\FluxoVeicular.Client.csproj": {
-              "projectPath": "C:\\TCC\\FluxoVeicular\\FluxoVeicular\\FluxoVeicular.Client\\FluxoVeicular.Client.csproj"
+            "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj": {
+              "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj"
             }
           }
         }

@@ -1,6 +1,7 @@
-﻿using FluxoVeicular.ServiceDefaults.Context;
+﻿using FluxoVeicular.App.Client.Request;
+using FluxoVeicular.App.Client.Response;
+using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Entities;
-using FluxoVeicular.ServiceDefaults.Requests;
 using FluxoVeicular.ServiceDefaults.Responses;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.AspNetCore.Mvc;
@@ -9,13 +10,12 @@ using Microsoft.EntityFrameworkCore;
 namespace FluxoVeicular.ApiService.Controllers
 {
     [ApiController]
-    [Route("api/veiculo")]
+    [Route("api/veiculos")]
     public class VeiculosController : ControllerBase
     {
         private readonly FluxoVeicularContext _context;
         private readonly VeiculoPlacaService _service;
 
-        // IDE0290: Usar construtor primário (C# 12+)
         public VeiculosController(FluxoVeicularContext context, VeiculoPlacaService service)
         {
             _context = context;
@@ -24,7 +24,7 @@ namespace FluxoVeicular.ApiService.Controllers
 
         // GET: api/veiculos
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<VeiculoResponse>>> GetVeiculos()
+        public async Task<ActionResult<IEnumerable<VeiculoResponse>>> GetVeiculo()
         {
             var veiculos = await _context.Veiculos.ToListAsync();
 
@@ -38,7 +38,7 @@ namespace FluxoVeicular.ApiService.Controllers
 
         // GET: api/veiculos/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<VeiculoResponse>> GetVeiculo(Guid id)
+        public async Task<ActionResult<VeiculoResponse>> GetVeiculoById(Guid id)
         {
             var veiculo = await _context.Veiculos.FindAsync(id);
 
