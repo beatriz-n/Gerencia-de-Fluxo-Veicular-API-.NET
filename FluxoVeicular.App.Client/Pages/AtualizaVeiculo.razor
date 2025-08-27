@@ -1,0 +1,46 @@
+﻿@page "/veiculos/editar/{Id:guid}"
+@using FluxoVeicular.ServiceDefaults.Responses
+
+<PageTitle>Editar Veículo</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="d-flex justify-center mt-10">
+
+    <MudPaper Class="pa-6 rounded-xl mud-elevation-6" Style="width:100%;">
+
+        <MudText Typo="Typo.h5" Class="mb-4 text-center">
+            Editar Veículo
+        </MudText>
+
+        <MudForm @ref="_form">
+
+            <MudStack Spacing="2">
+                <MudTextField @bind-Value="_veiculo!.Placa"
+                              Label="Placa"
+                              Variant="Variant.Outlined"
+                              Required="true"
+                              RequiredError="Placa é obrigatória" />
+
+                <MudTextField @bind-Value="_veiculo.Cor"
+                              Label="Cor"
+                              Variant="Variant.Outlined" />
+            </MudStack>
+
+            <MudDivider Class="my-4" />
+
+            <MudGrid Justify="Justify.SpaceBetween">
+                <MudItem>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarAlteracoes">
+                        Salvar Alterações
+                    </MudButton>
+                </MudItem>
+                <MudItem>
+                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="/veiculos">
+                        Cancelar
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+
+        </MudForm>
+    </MudPaper>
+</MudContainer>
+

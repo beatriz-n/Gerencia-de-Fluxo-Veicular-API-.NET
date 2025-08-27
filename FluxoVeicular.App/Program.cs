@@ -1,20 +1,29 @@
-using MudBlazor.Services;
-using FluxoVeicular.App.Client.Pages;
+﻿using FluxoVeicular.App.Client;
 using FluxoVeicular.App.Components;
+using FluxoVeicular.Web.ServiceApi;
+using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add MudBlazor services
+// Registrar serviços MudBlazor globalmente
 builder.Services.AddMudServices();
 
-// Add services to the container.
+// Registrar Razor Components (Server + WASM interativo)
 builder.Services.AddRazorComponents()
-    .AddInteractiveServerComponents()
-    .AddInteractiveWebAssemblyComponents();
+       .AddInteractiveServerComponents()
+       .AddInteractiveWebAssemblyComponents();
+
+// Registrar HttpClient para API
+builder.Services.AddScoped(sp => new HttpClient
+{
+    BaseAddress = new Uri("https://localhost:4040") // URL da API
+});
+
+// Registrar serviço da API
+builder.Services.AddScoped<VeiculoServiceApi>();
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseWebAssemblyDebugging();
@@ -22,19 +31,16 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
-
-
 app.UseAntiforgery();
-
 app.MapStaticAssets();
+
+// Registrar render modes
 app.MapRazorComponents<App>()
-    .AddInteractiveServerRenderMode()
-    .AddInteractiveWebAssemblyRenderMode()
-    .AddAdditionalAssemblies(typeof(FluxoVeicular.App.Client._Imports).Assembly);
+   .AddInteractiveServerRenderMode()
+   .AddInteractiveWebAssemblyRenderMode();
 
 app.Run();

@@ -1,4 +1,4 @@
-using FluxoVeicular.ServiceDefaults.Context;
+﻿using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -9,7 +9,7 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<FluxoVeicularContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Registra servi�o usado pelos controllers
+// Registra serviço usado pelos controllers
 builder.Services.AddScoped<VeiculoPlacaService>();
 
 // Adiciona controllers e Swagger
@@ -17,10 +17,18 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// 🔥 Adiciona política de CORS
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll",
+        policy => policy
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+});
 
 var app = builder.Build();
 
-// Pipeline
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -29,7 +37,7 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 
-app.UseCors("AllowAll"); // habilita CORS
+app.UseCors("AllowAll");
 
 app.MapControllers();
 

@@ -350,3 +350,4 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.pdb
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.genruntimeconfig.cache
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\ref\FluxoVeicular.ApiService.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.MvcApplicationPartsAssemblyInfo.cs
