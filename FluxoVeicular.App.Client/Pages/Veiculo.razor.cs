@@ -15,9 +15,15 @@ namespace FluxoVeicular.App.Client.Pages
         [Inject]
         public VeiculoServiceApi VeiculoApi { get; set; } = default!;
 
+
         private void EditarVeiculo(Guid id)
         {
             Navigation.NavigateTo($"/veiculos/editar/{id}");
+        }
+
+        private void VisualizarVeiculo(Guid id)
+        {
+            Navigation.NavigateTo($"/veiculos/visualiza/{id}");
         }
         private async Task ExcluirVeiculo(Guid id)
         {

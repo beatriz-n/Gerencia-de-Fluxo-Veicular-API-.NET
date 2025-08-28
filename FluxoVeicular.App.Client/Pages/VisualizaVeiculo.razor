@@ -1,12 +1,14 @@
-﻿@page "/veiculos/cadastro/"
-<PageTitle>Cadastro de Veículo</PageTitle>
+﻿@page "/veiculos/visualiza/{Id:guid}"
+@using FluxoVeicular.ServiceDefaults.Responses
+
+<PageTitle>Visualizar Veículo</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="d-flex justify-center mt-10">
 
     <MudPaper Class="pa-6 rounded-xl mud-elevation-6" Style="width:100%;">
 
         <MudText Typo="Typo.h5" Class="mb-4 text-center">
-            Cadastro de Veículo
+            Visualizar Veículo
         </MudText>
 
         <MudForm @ref="_form">
@@ -15,21 +17,17 @@
                 <MudTextField @bind-Value="_veiculo!.Placa"
                               Label="Placa"
                               Variant="Variant.Outlined"
-                              Required="true"
-                              RequiredError="Placa é obrigatória" />
+							  Disabled="true" />
 
                 <MudTextField @bind-Value="_veiculo.Cor"
                               Label="Cor"
+                              Disabled="true"
                               Variant="Variant.Outlined" />
             </MudStack>
 
             <MudDivider Class="my-4" />
-            <MudGrid Justify="Justify.SpaceBetween">
-                <MudItem>
-                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarVeiculo">
-                        Salvar
-                    </MudButton>
-                </MudItem>
+
+            <MudGrid Justify="Justify.FlexStart">
                 <MudItem>
                     <MudButton Variant="Variant.Outlined" Color="Color.Warning" Href="/veiculos">
                         Voltar
@@ -37,7 +35,7 @@
                 </MudItem>
             </MudGrid>
 
-
         </MudForm>
     </MudPaper>
 </MudContainer>
+

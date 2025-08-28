@@ -15,7 +15,7 @@
             <MudText Typo="Typo.h5" GutterBottom>Lista de Veículos</MudText>
         </MudItem>
         <MudItem xs="6" Class="d-flex justify-end">
-            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/cadastroveiculo" StartIcon="@Icons.Material.Filled.Add">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/veiculos/cadastro/" StartIcon="@Icons.Material.Filled.Add">
                 Novo Veículo
             </MudButton>
         </MudItem>
@@ -33,9 +33,14 @@
 
             <MudTd DataLabel="Ações">
                 <MudIconButton Icon="@Icons.Material.Filled.Edit"
-                               Color="Color.Primary"
+                               Color="Color.Warning"
                                Size="Size.Small"
                                OnClick="() => EditarVeiculo(context.Id)" />
+
+                <MudIconButton Icon="@Icons.Material.Filled.RemoveRedEye"
+                               Color="Color.Primary"
+                               Size="Size.Small"
+                               OnClick="() => VisualizarVeiculo(context.Id)" />
 
                 <MudIconButton Icon="@Icons.Material.Filled.Delete"
                                Color="Color.Error"

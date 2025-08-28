@@ -29,13 +29,13 @@
 
             <MudGrid Justify="Justify.SpaceBetween">
                 <MudItem>
-                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarAlteracoes">
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(async (e) => await SalvarAlteracoes())">
                         Salvar Alterações
                     </MudButton>
                 </MudItem>
                 <MudItem>
-                    <MudButton Variant="Variant.Outlined" Color="Color.Secondary" Href="/veiculos">
-                        Cancelar
+                    <MudButton Variant="Variant.Outlined" Color="Color.Warning" Href="/veiculos">
+                        Voltar
                     </MudButton>
                 </MudItem>
             </MudGrid>

@@ -81,33 +81,36 @@ namespace FluxoVeicular.ApiService.Controllers
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateVeiculo(Guid id, VeiculoRequest request)
         {
-            if (id != request.Id)
-                return BadRequest("ID do veículo não confere.");
-
-            var veiculo = await _context.Veiculos.FindAsync(id);
-            if (veiculo == null)
-                return NotFound();
-
-            veiculo.Placa = request.Placa;
-            veiculo.Cor = request.Cor;
-
-            _context.Entry(veiculo).State = EntityState.Modified;
-
-            try
+            if (id != Guid.Empty)
             {
-                await _context.SaveChangesAsync();
-            }
-            catch (DbUpdateConcurrencyException)
-            {
-                if (!await _context.Veiculos.AnyAsync(v => v.Id == id))
+                var veiculo = await _context.Veiculos.FindAsync(id);
+                if (veiculo == null)
                     return NotFound();
-                else
-                    throw;
+
+                veiculo.Placa = request.Placa;
+                veiculo.Cor = request.Cor;
+
+                _context.Entry(veiculo).State = EntityState.Modified;
+
+                try
+                {
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!await _context.Veiculos.AnyAsync(v => v.Id == id))
+                        return NotFound();
+                    else
+                        throw;
+                }
+
+                return NoContent();
             }
-
-            return NoContent();
+            else
+            {
+                return BadRequest("ID inválido.");
+            }
         }
-
         // DELETE: api/veiculos/5
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteVeiculo(Guid id)

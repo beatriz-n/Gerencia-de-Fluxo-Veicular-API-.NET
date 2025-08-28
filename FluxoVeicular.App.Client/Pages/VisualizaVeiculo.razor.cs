@@ -5,7 +5,7 @@ using MudBlazor;
 
 namespace FluxoVeicular.App.Client.Pages
 {
-    public partial class AtualizaVeiculo
+    public partial class VisualizaVeiculo
     {
         [Inject]
         private VeiculoServiceApi _veiculoApi { get; set; } = default!;
@@ -37,30 +37,6 @@ namespace FluxoVeicular.App.Client.Pages
             {
                 _snackbar.Add("Veículo não encontrado.", Severity.Error);
                 Navigation.NavigateTo("/veiculos");
-            }
-        }
-
-        private async Task SalvarAlteracoes()
-        {
-            if (Id != Guid.Empty)
-            {
-                {
-                    var atualizado = await _veiculoApi.UpdateVeiculoAsync(Id, new FluxoVeicular.App.Client.Request.VeiculoRequest
-                    {
-                        Placa = _veiculo!.Placa,
-                        Cor = _veiculo.Cor
-                    });
-
-                    if (atualizado != null)
-                    {
-                        _snackbar.Add("Veículo atualizado com sucesso!", Severity.Success);
-                        //Navigation.NavigateTo("/veiculos");
-                    }
-                    else
-                    {
-                        _snackbar.Add("Erro ao atualizar veículo.", Severity.Error);
-                    }
-                }
             }
         }
     }
