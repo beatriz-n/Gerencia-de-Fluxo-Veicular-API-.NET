@@ -7,6 +7,7 @@ namespace FluxoVeicular.App.Client.Pages
 {
     public partial class AtualizaVeiculo
     {
+        private bool Loading = true;
         [Inject]
         private VeiculoServiceApi _veiculoApi { get; set; } = default!;
         [Inject]
@@ -38,6 +39,7 @@ namespace FluxoVeicular.App.Client.Pages
                 _snackbar.Add("Veículo não encontrado.", Severity.Error);
                 Navigation.NavigateTo("/veiculos");
             }
+            Loading = false;
         }
 
         private async Task SalvarAlteracoes()
@@ -50,7 +52,7 @@ namespace FluxoVeicular.App.Client.Pages
                         Placa = _veiculo!.Placa,
                         Cor = _veiculo.Cor
                     });
-
+                    
                     if (atualizado != null)
                     {
                         _snackbar.Add("Veículo atualizado com sucesso!", Severity.Success);
@@ -62,6 +64,7 @@ namespace FluxoVeicular.App.Client.Pages
                     }
                 }
             }
+
         }
     }
 }

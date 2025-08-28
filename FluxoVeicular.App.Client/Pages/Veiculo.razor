@@ -21,35 +21,43 @@
         </MudItem>
     </MudGrid>
 
-    <MudTable Items="_veiculos" Hover="true" Bordered="true" Striped="true" Class="mt-4 d-flex justify-center">
-        <HeaderContent>
-            <MudTh>Placa</MudTh>
-            <MudTh>Cor</MudTh>
-            <MudTh Class="d-flex justify-center">Ações</MudTh>
-        </HeaderContent>
-        <RowTemplate>
-            <MudTd DataLabel="Placa">@context.Placa</MudTd>
-            <MudTd DataLabel="Modelo">@context.Cor</MudTd>
+    @if(Loading == true)
+    {
+        <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+    }
+    else
+    {
+        <MudTable Items="_veiculos" Hover="true" Bordered="true" Striped="true" Class="mt-4 d-flex justify-center">
+            <HeaderContent>
+                <MudTh>Placa</MudTh>
+                <MudTh>Cor</MudTh>
+                <MudTh Class="d-flex justify-center">Ações</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Placa">@context.Placa</MudTd>
+                <MudTd DataLabel="Modelo">@context.Cor</MudTd>
 
-            <MudTd DataLabel="Ações">
-                <MudIconButton Icon="@Icons.Material.Filled.Edit"
-                               Color="Color.Warning"
-                               Size="Size.Small"
-                               OnClick="() => EditarVeiculo(context.Id)" />
+                <MudTd DataLabel="Ações">
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                   Color="Color.Warning"
+                                   Size="Size.Small"
+                                   OnClick="() => EditarVeiculo(context.Id)" />
 
-                <MudIconButton Icon="@Icons.Material.Filled.RemoveRedEye"
-                               Color="Color.Primary"
-                               Size="Size.Small"
-                               OnClick="() => VisualizarVeiculo(context.Id)" />
+                    <MudIconButton Icon="@Icons.Material.Filled.RemoveRedEye"
+                                   Color="Color.Primary"
+                                   Size="Size.Small"
+                                   OnClick="() => VisualizarVeiculo(context.Id)" />
 
-                <MudIconButton Icon="@Icons.Material.Filled.Delete"
-                               Color="Color.Error"
-                               Size="Size.Small"
-                               OnClick="@(async (e) => await ExcluirVeiculo(context.Id))" />
-            </MudTd>
+                    <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                   Color="Color.Error"
+                                   Size="Size.Small"
+                                   OnClick="@(async (e) => await ExcluirVeiculo(context.Id))" />
+                </MudTd>
 
-        </RowTemplate>
-    </MudTable>
+            </RowTemplate>
+        </MudTable>
 
+    }
+    
 
 </MudContainer>

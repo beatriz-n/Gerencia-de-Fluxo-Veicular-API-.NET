@@ -7,6 +7,7 @@ namespace FluxoVeicular.App.Client.Pages
 {
     public partial class VisualizaVeiculo
     {
+        private bool Loading = true;
         [Inject]
         private VeiculoServiceApi _veiculoApi { get; set; } = default!;
         [Inject]
@@ -38,6 +39,7 @@ namespace FluxoVeicular.App.Client.Pages
                 _snackbar.Add("Veículo não encontrado.", Severity.Error);
                 Navigation.NavigateTo("/veiculos");
             }
+            Loading = false;
         }
     }
 }

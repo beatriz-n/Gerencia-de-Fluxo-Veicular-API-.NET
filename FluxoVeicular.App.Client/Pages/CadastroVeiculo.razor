@@ -1,4 +1,7 @@
 ﻿@page "/veiculos/cadastro/"
+@using FluxoVeicular.App.Client.Enum
+@using MudBlazor
+
 <PageTitle>Cadastro de Veículo</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="d-flex justify-center mt-10">
@@ -18,9 +21,13 @@
                               Required="true"
                               RequiredError="Placa é obrigatória" />
 
-                <MudTextField @bind-Value="_veiculo.Cor"
-                              Label="Cor"
-                              Variant="Variant.Outlined" />
+                <!-- MudSelect para Cor -->
+                <MudSelect T="string" @bind-Value="_veiculo.Cor" Label="Cor" Variant="Variant.Outlined">
+                    @foreach (var cor in Enum.GetValues<CorVeiculo>())
+                    {
+                        <MudSelectItem Value="@cor.ToString()">@cor.ToString()</MudSelectItem>
+                    }
+                </MudSelect>
             </MudStack>
 
             <MudDivider Class="my-4" />
@@ -36,7 +43,6 @@
                     </MudButton>
                 </MudItem>
             </MudGrid>
-
 
         </MudForm>
     </MudPaper>

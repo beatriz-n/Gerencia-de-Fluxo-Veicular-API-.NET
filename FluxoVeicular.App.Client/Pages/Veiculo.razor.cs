@@ -9,6 +9,8 @@ namespace FluxoVeicular.App.Client.Pages
     {
         private List<VeiculoResponse> _veiculos = new();
 
+        private bool Loading = true;
+
         [Inject]
         public IDialogService DialogService { get; set; } = default!;
 
@@ -51,6 +53,7 @@ namespace FluxoVeicular.App.Client.Pages
         protected override async Task OnInitializedAsync()
         {
             _veiculos = await VeiculoApi.GetVeiculosAsync();
+            Loading = false;
         }
     }
 }
