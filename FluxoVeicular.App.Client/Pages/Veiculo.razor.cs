@@ -1,6 +1,8 @@
-﻿using FluxoVeicular.ServiceDefaults.Responses;
+﻿using FluxoVeicular.App.Client.Response;
+using FluxoVeicular.ServiceDefaults.Responses;
 using FluxoVeicular.Web.ServiceApi;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
 
 namespace FluxoVeicular.App.Client.Pages
@@ -8,15 +10,22 @@ namespace FluxoVeicular.App.Client.Pages
     public partial class Veiculo
     {
         private List<VeiculoResponse> _veiculos = new();
-
         private bool Loading = true;
+
+        [Inject]
+        public NavigationManager Navigation { get; set; } = default!;
 
         [Inject]
         public IDialogService DialogService { get; set; } = default!;
 
         [Inject]
+        public ISnackbar Snackbar { get; set; } = default!;
+
+        [Inject]
         public VeiculoServiceApi VeiculoApi { get; set; } = default!;
 
+        [Inject]
+        public HubConnection Hub { get; set; } = default!;
 
         private void EditarVeiculo(Guid id)
         {
@@ -27,9 +36,9 @@ namespace FluxoVeicular.App.Client.Pages
         {
             Navigation.NavigateTo($"/veiculos/visualiza/{id}");
         }
+
         private async Task ExcluirVeiculo(Guid id)
         {
-            Console.WriteLine($"[DEBUG] Clicou para excluir {id}");
             bool confirmado = await DialogService.ShowMessageBox(
                 "Confirmação",
                 "Tem certeza que deseja excluir este veículo?",
@@ -42,7 +51,7 @@ namespace FluxoVeicular.App.Client.Pages
             {
                 Snackbar.Add("Veículo excluído com sucesso.", Severity.Success);
                 _veiculos = await VeiculoApi.GetVeiculosAsync();
-                StateHasChanged();
+                //StateHasChanged();
             }
             else
             {
@@ -50,8 +59,52 @@ namespace FluxoVeicular.App.Client.Pages
             }
         }
 
+        private async Task MostrarDialogoSolicitacao(object dados)
+        {
+
+            var parameters = new DialogParameters
+            {
+                ["Mensagem"] = $"Placa {dados} não cadastrada no sistema está solicitando acesso.\nDeseja cadastrar o veículo?"
+            };
+
+            var options = new DialogOptions
+            {
+                CloseButton = false,
+                BackdropClick = false,
+            };
+
+            var dialog = DialogService.Show<DialogSolicitacao>("🚨 Alerta de Consulta", parameters, options);
+            var result = await dialog.Result;
+
+            if (!result.Canceled)
+            {
+                if (result.Data?.ToString() == "Cadastrar")
+                {
+                    Navigation.NavigateTo("/veiculos/cadastro/");
+                }
+                else
+                {
+                    Snackbar.Add("Acesso negado à solicitação.", Severity.Warning);
+                }
+            }
+        }
+
         protected override async Task OnInitializedAsync()
         {
+            // Conectar Hub
+            if (Hub.State == HubConnectionState.Disconnected)
+            {
+                await Hub.StartAsync();
+            }
+
+            // Escutar evento de alerta
+            Hub.On<object>("AlertaPlaca", async (dados) =>
+            {
+                if (dados is null) return;
+                await MostrarDialogoSolicitacao(dados);
+            });
+
+            // Carregar veículos inicialmente
             _veiculos = await VeiculoApi.GetVeiculosAsync();
             Loading = false;
         }

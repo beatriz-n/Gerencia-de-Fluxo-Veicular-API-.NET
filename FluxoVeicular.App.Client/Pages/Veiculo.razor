@@ -1,9 +1,4 @@
 ﻿@page "/veiculos"
-@inject NavigationManager Navigation
-@inject ISnackbar Snackbar
-@* @inject IDialogService DialogService
-@inject ISnackbar Snackbar
-@inject FluxoVeicular.Web.ServiceApi.VeiculoServiceApi VeiculoApi *@
 
 
 <PageTitle>Veículos</PageTitle>
@@ -21,7 +16,7 @@
         </MudItem>
     </MudGrid>
 
-    @if(Loading == true)
+    @if (Loading)
     {
         <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
     }
@@ -35,8 +30,7 @@
             </HeaderContent>
             <RowTemplate>
                 <MudTd DataLabel="Placa">@context.Placa</MudTd>
-                <MudTd DataLabel="Modelo">@context.Cor</MudTd>
-
+                <MudTd DataLabel="Cor">@context.Cor</MudTd>
                 <MudTd DataLabel="Ações">
                     <MudIconButton Icon="@Icons.Material.Filled.Edit"
                                    Color="Color.Warning"
@@ -53,11 +47,7 @@
                                    Size="Size.Small"
                                    OnClick="@(async (e) => await ExcluirVeiculo(context.Id))" />
                 </MudTd>
-
             </RowTemplate>
         </MudTable>
-
     }
-    
-
 </MudContainer>

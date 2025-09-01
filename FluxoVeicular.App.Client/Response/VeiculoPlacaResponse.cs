@@ -2,6 +2,7 @@
 {
     public class VeiculoPlacaResponse
     {
-        public bool Acesso { get; set; }
+        public string? Placa { get; set; }
+        //public bool Acesso { get; set; }
     }
 }

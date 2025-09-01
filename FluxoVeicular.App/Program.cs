@@ -1,6 +1,6 @@
 ﻿using FluxoVeicular.App.Client;
-using FluxoVeicular.App.Components;
 using FluxoVeicular.Web.ServiceApi;
+
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -21,6 +21,8 @@ builder.Services.AddScoped(sp => new HttpClient
 
 // Registrar serviço da API
 builder.Services.AddScoped<VeiculoServiceApi>();
+
+
 
 var app = builder.Build();
 

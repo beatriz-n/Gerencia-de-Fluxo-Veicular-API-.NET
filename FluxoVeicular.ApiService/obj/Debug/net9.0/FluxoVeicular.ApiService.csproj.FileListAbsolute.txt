@@ -351,3 +351,12 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.genruntimeconfig.cache
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\ref\FluxoVeicular.ApiService.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\FluxoVeicular.ApiService.MvcApplicationPartsAssemblyInfo.cs
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.Connections.Abstractions.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.Core.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Common.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Protocols.Json.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.Extensions.Features.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Client.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Common.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.Net.ServerSentEvents.dll

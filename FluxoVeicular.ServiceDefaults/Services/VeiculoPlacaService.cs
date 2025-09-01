@@ -16,19 +16,15 @@ namespace FluxoVeicular.ServiceDefaults.Services
 
         public async Task<VeiculoPlacaResponse> GetVeiculoByPlacaAsync(string placa)
         {
-            bool acesso = false;
             var veiculo = await _context.Veiculos
                 .AsNoTracking() // melhora performance em consulta
                 .FirstOrDefaultAsync(v => v.Placa == placa);
-            if (veiculo != null)
-                acesso = true;
-            else
-                acesso = false;
 
-            return new VeiculoPlacaResponse
-            {
-                Acesso = acesso
-            };
+                return new VeiculoPlacaResponse
+                {
+                    Placa = veiculo?.Placa
+                };
+
         }
 
     }

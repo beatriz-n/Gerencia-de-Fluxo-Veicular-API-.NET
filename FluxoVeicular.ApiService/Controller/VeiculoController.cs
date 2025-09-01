@@ -5,6 +5,7 @@ using FluxoVeicular.ServiceDefaults.Entities;
 using FluxoVeicular.ServiceDefaults.Responses;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
 namespace FluxoVeicular.ApiService.Controllers
@@ -15,14 +16,15 @@ namespace FluxoVeicular.ApiService.Controllers
     {
         private readonly FluxoVeicularContext _context;
         private readonly VeiculoPlacaService _service;
-
-        public VeiculosController(FluxoVeicularContext context, VeiculoPlacaService service)
+        private readonly IHubContext<NotificacaoHub> _hub;
+        public VeiculosController(FluxoVeicularContext context, VeiculoPlacaService service, IHubContext<NotificacaoHub> hub)
         {
             _context = context;
             _service = service;
+            _hub = hub;
         }
 
-        // GET: api/veiculos
+        // pesquisa todos os veiculos
         [HttpGet]
         public async Task<ActionResult<IEnumerable<VeiculoResponse>>> GetVeiculo()
         {
@@ -36,7 +38,7 @@ namespace FluxoVeicular.ApiService.Controllers
             }).ToList();
         }
 
-        // GET: api/veiculos/5
+        // pesquisa por id
         [HttpGet("{id}")]
         public async Task<ActionResult<VeiculoResponse>> GetVeiculoById(Guid id)
         {
@@ -53,7 +55,7 @@ namespace FluxoVeicular.ApiService.Controllers
             };
         }
 
-        // POST: api/veiculos
+        // adicionar veiculo
         [HttpPost]
         public async Task<ActionResult<VeiculoResponse>> CreateVeiculo(VeiculoRequest request)
         {
@@ -77,7 +79,7 @@ namespace FluxoVeicular.ApiService.Controllers
             return CreatedAtAction(nameof(GetVeiculo), new { id = veiculo.Id }, response);
         }
 
-        // PUT: api/veiculos/5
+        // atualiza veiculo
         [HttpPut("{id}")]
         public async Task<IActionResult> UpdateVeiculo(Guid id, VeiculoRequest request)
         {
@@ -111,7 +113,7 @@ namespace FluxoVeicular.ApiService.Controllers
                 return BadRequest("ID inválido.");
             }
         }
-        // DELETE: api/veiculos/5
+        // excluir veiculo
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteVeiculo(Guid id)
         {
@@ -125,13 +127,26 @@ namespace FluxoVeicular.ApiService.Controllers
             return NoContent();
         }
 
+        //pesquisa por placa
         [HttpGet("placa/{placa}")]
         public async Task<ActionResult<VeiculoPlacaResponse>> GetVeiculoPlaca(string placa)
         {
             var placaResponse = await _service.GetVeiculoByPlacaAsync(placa);
 
-            return Ok(placaResponse); // sempre retorna o DTO
+            if (placaResponse is not null && !string.IsNullOrWhiteSpace(placaResponse.Placa))
+            {
+                return Ok(placaResponse);
+            }
+
+            await _hub.Clients.All.SendAsync("AlertaPlaca", new
+            {
+                Mensagem = $"Consulta de placa recebida: {placa}",
+                Dados = placaResponse?.Placa
+            });
+
+            return NotFound($"Veículo com a placa {placa} não encontrado.");
         }
+
 
     }
 }

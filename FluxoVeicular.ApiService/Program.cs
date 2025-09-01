@@ -4,20 +4,20 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Configura DbContext com PostgreSQL
+// DbContext
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 builder.Services.AddDbContext<FluxoVeicularContext>(options =>
     options.UseNpgsql(connectionString));
 
-// Registra serviço usado pelos controllers
+// Serviços
 builder.Services.AddScoped<VeiculoPlacaService>();
 
-// Adiciona controllers e Swagger
+// Controllers + Swagger
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// 🔥 Adiciona política de CORS
+// CORS (necessário pro Blazor acessar)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -26,6 +26,9 @@ builder.Services.AddCors(options =>
             .AllowAnyMethod()
             .AllowAnyHeader());
 });
+
+// Adiciona SignalR
+builder.Services.AddSignalR();
 
 var app = builder.Build();
 
@@ -36,9 +39,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
 app.UseCors("AllowAll");
 
 app.MapControllers();
+
+// 🔥 Aqui expõe o Hub
+app.MapHub<NotificacaoHub>("/hub/notificacao");
 
 app.Run();
