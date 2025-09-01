@@ -140,7 +140,7 @@ namespace FluxoVeicular.ApiService.Controllers
 
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
-                Mensagem = $"Consulta de placa recebida: {placa}",
+                Mensagem = $"{placa}",
                 Dados = placaResponse?.Placa
             });
 

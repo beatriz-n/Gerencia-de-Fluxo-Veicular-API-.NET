@@ -14,9 +14,6 @@ builder.Services.AddSingleton(sp =>
         .WithAutomaticReconnect()
         .Build();
 
-
-    connection.StartAsync(); // inicia automaticamente
-
     return connection;
 });
 
