@@ -1,0 +1,15 @@
+[
+  {
+    "Name": "Novo Perfil",
+    "Projects": [
+      {
+        "Path": "FluxoVeicular.ApiService\\FluxoVeicular.ApiService.csproj",
+        "Action": "Start"
+      },
+      {
+        "Path": "FluxoVeicular.App\\FluxoVeicular.App.csproj",
+        "Action": "Start"
+      }
+    ]
+  }
+]

@@ -1,0 +1,54 @@
+﻿@page "/veiculos"
+@inherits BaseComponente
+
+
+<PageTitle>Veículos</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.False" Class="pa-4">
+
+    <MudGrid>
+        <MudItem xs="6">
+            <MudText Typo="Typo.h5" GutterBottom>Lista de Veículos</MudText>
+        </MudItem>
+        <MudItem xs="6" Class="d-flex justify-end">
+            <MudButton Variant="Variant.Filled" Color="Color.Primary" Href="/veiculos/cadastro/" StartIcon="@Icons.Material.Filled.Add">
+                Novo Veículo
+            </MudButton>
+        </MudItem>
+    </MudGrid>
+
+    @if (Loading)
+    {
+        <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+    }
+    else
+    {
+        <MudTable Items="_veiculos" Hover="true" Bordered="true" Striped="true" Class="mt-4 d-flex justify-center">
+            <HeaderContent>
+                <MudTh>Placa</MudTh>
+                <MudTh>Cor</MudTh>
+                <MudTh Class="d-flex justify-center">Ações</MudTh>
+            </HeaderContent>
+            <RowTemplate>
+                <MudTd DataLabel="Placa">@context.Placa</MudTd>
+                <MudTd DataLabel="Cor">@context.Cor</MudTd>
+                <MudTd DataLabel="Ações">
+                    <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                   Color="Color.Warning"
+                                   Size="Size.Small"
+                                   OnClick="() => EditarVeiculo(context.Id)" />
+
+                    <MudIconButton Icon="@Icons.Material.Filled.RemoveRedEye"
+                                   Color="Color.Primary"
+                                   Size="Size.Small"
+                                   OnClick="() => VisualizarVeiculo(context.Id)" />
+
+                    <MudIconButton Icon="@Icons.Material.Filled.Delete"
+                                   Color="Color.Error"
+                                   Size="Size.Small"
+                                   OnClick="@(async (e) => await ExcluirVeiculo(context.Id))" />
+                </MudTd>
+            </RowTemplate>
+        </MudTable>
+    }
+</MudContainer>

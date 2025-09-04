@@ -1,0 +1,57 @@
+﻿@page "/veiculos/editar/{Id:guid}"
+@inherits BaseComponente
+
+<PageTitle>Editar Veículo</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="d-flex justify-center mt-10">
+
+    <MudPaper Class="pa-6 rounded-xl mud-elevation-6" Style="width:100%;">
+
+        <MudText Typo="Typo.h5" Class="mb-4 text-center">
+            Editar Veículo
+        </MudText>
+
+        @if(Loading == true)
+        {
+            <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+        }
+        else
+        {
+            <MudForm @ref="_form">
+
+                <MudStack Spacing="2">
+                    <MudTextField @bind-Value="_veiculo!.Placa"
+                                  Label="Placa"
+                                  Variant="Variant.Outlined"
+                                  Required="true"
+                                  RequiredError="Placa é obrigatória" />
+
+                    <MudSelect T="string" @bind-Value="_veiculo.Cor" Label="Cor" Variant="Variant.Outlined">
+                        @foreach (var cor in Enum.GetValues<CorVeiculo>())
+                        {
+                            <MudSelectItem Value="@cor.ToString()">@cor.ToString()</MudSelectItem>
+                        }
+                    </MudSelect>
+                </MudStack>
+
+                <MudDivider Class="my-4" />
+
+                <MudGrid Justify="Justify.SpaceBetween">
+                    <MudItem>
+                        <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="@(async (e) => await SalvarAlteracoes())">
+                            Salvar Alterações
+                        </MudButton>
+                    </MudItem>
+                    <MudItem>
+                        <MudButton Variant="Variant.Outlined" Color="Color.Warning" Href="/veiculos">
+                            Voltar
+                        </MudButton>
+                    </MudItem>
+                </MudGrid>
+
+            </MudForm>
+        }
+        
+    </MudPaper>
+</MudContainer>
+

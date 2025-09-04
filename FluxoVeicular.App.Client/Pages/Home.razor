@@ -1,0 +1,30 @@
+﻿@page "/"
+@using MudBlazor
+@inherits BaseComponente
+
+<PageTitle>Home</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
+    <MudText Typo="Typo.h4" Class="mb-2">Bem-vindo ao Aplicativo!</MudText>
+    <MudText Typo="Typo.body1" Class="mb-4">
+        Esta é a página inicial. Aqui você pode acessar as principais funcionalidades do sistema de gestão de veículos de forma rápida e intuitiva.
+    </MudText>
+
+    <MudPaper Elevation="1" Class="pa-4 mb-4">
+        <MudText Typo="Typo.h6">Faça a Gestão de Veículos</MudText>
+        <MudText Typo="Typo.body2">
+            Cadastre, edite e organize todos os veículos da sua frota. Você pode consultar informações detalhadas, histórico de manutenções e status de cada veículo de forma simples.
+        </MudText>
+        <MudButton Href="/veiculos" Variant="Variant.Filled" Color="Color.Primary" Class="mt-2">
+            Acessar Gestão de Veículos
+        </MudButton>
+    </MudPaper>
+
+    <MudPaper Elevation="1" Class="pa-4 mb-4">
+        <MudText Typo="Typo.h6">Valide a Entrada</MudText>
+        <MudText Typo="Typo.body2">
+            O sistema identifica automaticamente veículos sem registro e permite liberar ou bloquear entradas de forma segura e rápida, garantindo controle total sobre o acesso.
+        </MudText>
+
+    </MudPaper>
+</MudContainer>
