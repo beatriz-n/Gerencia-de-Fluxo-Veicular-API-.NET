@@ -1,6 +1,5 @@
 ﻿using FluxoVeicular.App.Client;
-using FluxoVeicular.Web.ServiceApi;
-
+using FluxoVeicular.App.Client.ServiceApi;
 using MudBlazor.Services;
 
 var builder = WebApplication.CreateBuilder(args);

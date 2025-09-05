@@ -1,6 +1,6 @@
 using System.Net.Http;
 using FluxoVeicular.App.Client;
-using FluxoVeicular.Web.ServiceApi;
+using FluxoVeicular.App.Client.ServiceApi;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor.Services;

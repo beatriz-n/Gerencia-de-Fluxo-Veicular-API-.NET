@@ -2,13 +2,12 @@
 using FluxoVeicular.App.Client.Response;
 using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Entities;
-using FluxoVeicular.ServiceDefaults.Responses;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FluxoVeicular.ApiService.Controllers
+namespace FluxoVeicular.ApiService.Controller
 {
     [ApiController]
     [Route("api/veiculos")]

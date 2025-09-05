@@ -1,8 +1,8 @@
 ﻿using FluxoVeicular.App.Client.Request;
-using FluxoVeicular.ServiceDefaults.Responses;
+using FluxoVeicular.App.Client.Response;
 using System.Net.Http.Json;
 
-namespace FluxoVeicular.Web.ServiceApi
+namespace FluxoVeicular.App.Client.ServiceApi
 {
     public class VeiculoServiceApi
     {

@@ -1,5 +1,4 @@
-﻿
-namespace FluxoVeicular.ServiceDefaults.Responses
+﻿namespace FluxoVeicular.App.Client.Response
 {
     public class VeiculoResponse
     {
