@@ -3,7 +3,6 @@
     public enum TipoAcesso
     {
         Entrada,
-        Saida,
-        Negado
+        Saida
     }
 }

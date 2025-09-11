@@ -9,7 +9,6 @@ namespace FluxoVeicular.App.Client.Bases
 {
     public abstract class BaseComponente : ComponentBase, IAsyncDisposable
     {
-        // Removido [Inject] HubConnection
         private HubConnection Hub { get; set; } = default!;
 
         [Inject] protected IDialogService DialogService { get; set; } = default!;
@@ -21,68 +20,79 @@ namespace FluxoVeicular.App.Client.Bases
         protected virtual async Task MostrarDialogoSolicitacao(object dados)
         {
             string jsonString = dados.ToString();
-
             var jsonObject = JsonSerializer.Deserialize<JsonElement>(jsonString);
 
             int valorDados = jsonObject.GetProperty("dados").GetInt32();
-            string valorMensagem = jsonObject.GetProperty("mensagem").GetString();
+            string valorMensagem = jsonObject.GetProperty("mensagem").GetString() ?? string.Empty;
+
+            DialogParameters parameters;
+            DialogOptions options = new DialogOptions
+            {
+                CloseButton = false,
+                BackdropClick = false,
+            };
+
+            IDialogReference dialog;
 
             if (valorDados == 1)
             {
-                var parameters = new DialogParameters
+                // Acesso Liberado
+                parameters = new DialogParameters
                 {
                     ["Mensagem"] = $"Placa {valorMensagem} é reconhecida e já cadastrada na base de dados!",
                     ["Tipo"] = TipoTela.AcessoLiberado
                 };
 
-                var options = new DialogOptions
-                {
-                    CloseButton = false,
-                    BackdropClick = false,
-                };
-
-                var dialog = DialogService.Show<DialogSolicitacao>("✅ Acesso Liberado", parameters, options);
-                var result = await dialog.Result;
-                if (result.Data?.ToString() == "Liberado")
-                {
-                    Snackbar.Add("Acesso negado à solicitação.", Severity.Success);
-                }
-
+                dialog = DialogService.Show<DialogSolicitacao>("✅ Acesso Liberado", parameters, options);
             }
             else
             {
-                var parameters = new DialogParameters
+                // Acesso Negado / Solicitação de cadastro
+                parameters = new DialogParameters
                 {
                     ["Mensagem"] = $"Placa {valorMensagem} não cadastrada no sistema está solicitando acesso.\nDeseja cadastrar o veículo?",
                     ["Tipo"] = TipoTela.SolicitacaoAcesso
                 };
 
-                var options = new DialogOptions
-                {
-                    CloseButton = false,
-                    BackdropClick = false,
-                };
+                dialog = DialogService.Show<DialogSolicitacao>("🚨 Alerta de Consulta", parameters, options);
+            }
 
-                var dialog = DialogService.Show<DialogSolicitacao>("🚨 Alerta de Consulta", parameters, options);
-                var result = await dialog.Result;
+            // Fecha automaticamente após 30s
+            _ = FecharDialogoAutomaticamenteAsync(dialog, 30);
 
-                if (!result.Canceled)
+            var result = await dialog.Result;
+
+            // Tratar resultado do modal
+            if (result.Data?.ToString() == "FechadoAutomatico")
+            {
+                Snackbar.Add("A solicitação foi fechada automaticamente após 30s.", Severity.Info);
+            }
+            else if (valorDados == 1 && result.Data?.ToString() == "Liberado")
+            {
+                Snackbar.Add("Acesso negado à solicitação.", Severity.Success);
+            }
+            else if (valorDados != 1 && !result.Canceled)
+            {
+                if (result.Data?.ToString() == "Cadastrar")
                 {
-                    if (result.Data?.ToString() == "Cadastrar")
-                    {
-                        Navigation.NavigateTo("/veiculos/cadastro/");
-                    }
-                    else
-                    {
-                        Snackbar.Add("Acesso negado à solicitação.", Severity.Warning);
-                    }
+                    Navigation.NavigateTo("/veiculos/cadastro/");
+                }
+                else
+                {
+                    Snackbar.Add("Acesso negado à solicitação.", Severity.Warning);
                 }
             }
         }
 
+        private async Task FecharDialogoAutomaticamenteAsync(IDialogReference dialog, int segundos)
+        {
+            await Task.Delay(segundos * 1000);
+            await InvokeAsync(() => dialog.Close(DialogResult.Ok("FechadoAutomatico")));
+        }
+
         protected override async Task OnInitializedAsync()
         {
-            // Cria o HubConnection localmente
+            // Cria o HubConnection
             Hub = new HubConnectionBuilder()
                 .WithUrl(Navigation.ToAbsoluteUri("https://localhost:4040/hub/notificacao"))
                 .WithAutomaticReconnect()
