@@ -14,7 +14,6 @@ namespace FluxoVeicular.App.Client.Bases
         [Inject] protected IDialogService DialogService { get; set; } = default!;
         [Inject] protected NavigationManager Navigation { get; set; } = default!;
         [Inject] protected ISnackbar Snackbar { get; set; } = default!;
-
         private IDisposable? _alertSubscription;
 
         protected virtual async Task MostrarDialogoSolicitacao(object dados)
@@ -69,13 +68,13 @@ namespace FluxoVeicular.App.Client.Bases
             }
             else if (valorDados == 1 && result.Data?.ToString() == "Liberado")
             {
-                Snackbar.Add("Acesso negado à solicitação.", Severity.Success);
+                Snackbar.Add("Acesso Liberado!", Severity.Success);
             }
             else if (valorDados != 1 && !result.Canceled)
             {
                 if (result.Data?.ToString() == "Cadastrar")
                 {
-                    Navigation.NavigateTo("/veiculos/cadastro/");
+                    Navigation.NavigateTo($"/veiculos/cadastro?placa={valorMensagem}");
                 }
                 else
                 {
