@@ -9,7 +9,6 @@ namespace FluxoVeicular.App.Client.Pages
 {
     public partial class CadastroVeiculo
     {
-        // Recebe a placa via query string
         [Parameter]
         [SupplyParameterFromQuery(Name = "placa")]
         public string? PlacaCadastro { get; set; }
@@ -26,13 +25,15 @@ namespace FluxoVeicular.App.Client.Pages
             _snackbar = snackbar;
         }
 
-        protected override void OnInitialized()
+        // Chamado toda vez que a URL muda (ex: ?placa=ABC1234)
+        protected override async Task OnParametersSetAsync()
         {
-            // Se veio placa pela URL, já popula o objeto
-            if (!string.IsNullOrEmpty(PlacaCadastro))
-            {
-                _veiculo.Placa = PlacaCadastro;
-            }
+
+         _veiculo = new VeiculoResponse { Placa = PlacaCadastro }; // novo cadastro
+
+
+
+            StateHasChanged(); // força re-renderização do formulário
         }
 
         private async Task SalvarVeiculo()
@@ -42,13 +43,15 @@ namespace FluxoVeicular.App.Client.Pages
                 await _form.Validate();
                 if (_form.IsValid)
                 {
-                    _snackbar.Add($"Veículo {_veiculo.Placa} cadastrado com sucesso!", Severity.Success);
-
-                    _veiculo = await _veiculoApi.CreateVeiculoAsync(new VeiculoRequest
+                    var criado = await _veiculoApi.CreateVeiculoAsync(new VeiculoRequest
                     {
                         Placa = _veiculo.Placa,
                         Cor = _veiculo.Cor
                     });
+
+                    _snackbar.Add($"Veículo {_veiculo.Placa} cadastrado com sucesso!", Severity.Success);
+
+                    _veiculo = criado;
                 }
             }
         }
