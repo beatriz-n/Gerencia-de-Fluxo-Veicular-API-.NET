@@ -25,15 +25,12 @@ namespace FluxoVeicular.App.Client.Pages
             _snackbar = snackbar;
         }
 
-        // Chamado toda vez que a URL muda (ex: ?placa=ABC1234)
+        // Chamado toda vez que a chave da URL 
         protected override async Task OnParametersSetAsync()
         {
 
-         _veiculo = new VeiculoResponse { Placa = PlacaCadastro }; // novo cadastro
-
-
-
-            StateHasChanged(); // força re-renderização do formulário
+            _veiculo = new VeiculoResponse { Placa = PlacaCadastro }; // novo cadastro
+            StateHasChanged(); 
         }
 
         private async Task SalvarVeiculo()
