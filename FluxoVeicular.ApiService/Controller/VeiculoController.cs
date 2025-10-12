@@ -144,7 +144,7 @@ namespace FluxoVeicular.ApiService.Controller
             });
 
             // Envia alerta
-            var dados = placaResponse is not null ? 1 : 2;
+            var dados = placaResponse?.Placa is not null ? 1 : 2;
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
                 Dados = dados,
