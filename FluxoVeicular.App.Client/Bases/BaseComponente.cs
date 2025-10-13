@@ -1,8 +1,9 @@
-﻿using FluxoVeicular.App.Client.Pages;
+﻿using FluxoVeicular.App.Client.Enum;
+using FluxoVeicular.App.Client.Pages;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.SignalR.Client;
 using MudBlazor;
-using System;
+using System.Text.Json;
 
 namespace FluxoVeicular.App.Client.Bases
 {
@@ -19,25 +20,63 @@ namespace FluxoVeicular.App.Client.Bases
 
         protected virtual async Task MostrarDialogoSolicitacao(object dados)
         {
-            var parameters = new DialogParameters
-            {
-                ["Mensagem"] = $"Placa {dados} não cadastrada no sistema está solicitando acesso.\nDeseja cadastrar o veículo?"
-            };
+            string jsonString = dados.ToString();
+            var jsonObject = JsonSerializer.Deserialize<JsonElement>(jsonString);
 
-            var options = new DialogOptions
+            int valorDados = jsonObject.GetProperty("dados").GetInt32();
+            string valorMensagem = jsonObject.GetProperty("mensagem").GetString() ?? string.Empty;
+
+            DialogParameters parameters;
+            DialogOptions options = new DialogOptions
             {
                 CloseButton = false,
                 BackdropClick = false,
             };
 
-            var dialog = DialogService.Show<DialogSolicitacao>("🚨 Alerta de Consulta", parameters, options);
+            IDialogReference dialog;
+
+            if (valorDados == 1)
+            {
+                // Acesso Liberado
+                parameters = new DialogParameters
+                {
+                    ["Mensagem"] = $"Placa {valorMensagem} é reconhecida e já cadastrada na base de dados!",
+                    ["Tipo"] = TipoTela.AcessoLiberado
+                };
+
+                dialog = DialogService.Show<DialogSolicitacao>("✅ Acesso Liberado", parameters, options);
+            }
+            else
+            {
+                // Acesso Negado / Solicitação de cadastro
+                parameters = new DialogParameters
+                {
+                    ["Mensagem"] = $"Placa {valorMensagem} não cadastrada no sistema está solicitando acesso.\nDeseja cadastrar o veículo?",
+                    ["Tipo"] = TipoTela.SolicitacaoAcesso
+                };
+
+                dialog = DialogService.Show<DialogSolicitacao>("🚨 Alerta de Consulta", parameters, options);
+            }
+
+            // Fecha automaticamente após 30s
+            _ = FecharDialogoAutomaticamenteAsync(dialog, 30);
+
             var result = await dialog.Result;
 
-            if (!result.Canceled)
+            // Tratar resultado do modal
+            if (result.Data?.ToString() == "FechadoAutomatico")
+            {
+                Snackbar.Add("A solicitação foi fechada automaticamente após 30s.", Severity.Info);
+            }
+            else if (valorDados == 1 && result.Data?.ToString() == "Liberado")
+            {
+                Snackbar.Add("Acesso Liberado!", Severity.Success);
+            }
+            else if (valorDados != 1 && !result.Canceled)
             {
                 if (result.Data?.ToString() == "Cadastrar")
                 {
-                    Navigation.NavigateTo("/veiculos/cadastro/");
+                    Navigation.NavigateTo($"/veiculos/cadastro?placa={valorMensagem}");
                 }
                 else
                 {
@@ -46,9 +85,15 @@ namespace FluxoVeicular.App.Client.Bases
             }
         }
 
+        private async Task FecharDialogoAutomaticamenteAsync(IDialogReference dialog, int segundos)
+        {
+            await Task.Delay(segundos * 1000);
+            await InvokeAsync(() => dialog.Close(DialogResult.Ok("FechadoAutomatico")));
+        }
+
         protected override async Task OnInitializedAsync()
         {
-            // Cria o HubConnection localmente
+            // Cria o HubConnection
             Hub = new HubConnectionBuilder()
                 .WithUrl(Navigation.ToAbsoluteUri("https://localhost:4040/hub/notificacao"))
                 .WithAutomaticReconnect()

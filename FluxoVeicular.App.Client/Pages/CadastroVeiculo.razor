@@ -15,13 +15,14 @@
         <MudForm @ref="_form">
 
             <MudStack Spacing="2">
-                <MudTextField @bind-Value="_veiculo!.Placa"
+                <!-- Campo de Placa -->
+                <MudTextField @bind-Value="_veiculo.Placa"
                               Label="Placa"
                               Variant="Variant.Outlined"
                               Required="true"
-                              RequiredError="Placa é obrigatória" />
+                              RequiredError="Placa é obrigatória"/>
 
-                <!-- MudSelect para Cor -->
+                <!-- Campo de Cor -->
                 <MudSelect T="string" @bind-Value="_veiculo.Cor" Label="Cor" Variant="Variant.Outlined">
                     @foreach (var cor in Enum.GetValues<CorVeiculo>())
                     {
@@ -31,6 +32,7 @@
             </MudStack>
 
             <MudDivider Class="my-4" />
+
             <MudGrid Justify="Justify.SpaceBetween">
                 <MudItem>
                     <MudButton Variant="Variant.Filled" Color="Color.Primary" OnClick="SalvarVeiculo">

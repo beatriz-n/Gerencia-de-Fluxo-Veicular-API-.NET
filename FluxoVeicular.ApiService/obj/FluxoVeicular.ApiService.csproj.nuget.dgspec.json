@@ -33,6 +33,9 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
+              "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj": {
+                "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj"
+              },
               "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
                 "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj"
               }

@@ -9,5 +9,6 @@ namespace FluxoVeicular.ServiceDefaults.Context
             : base(options) { }
 
         public DbSet<Veiculo> Veiculos { get; set; }
+        public DbSet<Log> Logs { get; set; }
     }
 }

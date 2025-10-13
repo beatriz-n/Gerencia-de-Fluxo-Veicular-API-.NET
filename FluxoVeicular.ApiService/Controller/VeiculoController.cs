@@ -2,13 +2,13 @@
 using FluxoVeicular.App.Client.Response;
 using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Entities;
-using FluxoVeicular.ServiceDefaults.Responses;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 using Microsoft.EntityFrameworkCore;
 
-namespace FluxoVeicular.ApiService.Controllers
+
+namespace FluxoVeicular.ApiService.Controller
 {
     [ApiController]
     [Route("api/veiculos")]
@@ -127,26 +127,49 @@ namespace FluxoVeicular.ApiService.Controllers
             return NoContent();
         }
 
-        //pesquisa por placa
+        // Pesquisa por placa
         [HttpGet("placa/{placa}")]
         public async Task<ActionResult<VeiculoPlacaResponse>> GetVeiculoPlaca(string placa)
         {
             var placaResponse = await _service.GetVeiculoByPlacaAsync(placa);
+            var proximoAcesso = await _service.GetProximoAcessoAsync(placa);
 
-            if (placaResponse is not null && !string.IsNullOrWhiteSpace(placaResponse.Placa))
+            // Sempre grava log
+            await LogVeiculo(new LogRequest
             {
-                return Ok(placaResponse);
-            }
-
-            await _hub.Clients.All.SendAsync("AlertaPlaca", new
-            {
-                Mensagem = $"{placa}",
-                Dados = placaResponse?.Placa
+                Placa = placa,
+                DataHora = DateTime.UtcNow,
+                Tipo = proximoAcesso.ToString()
             });
 
-            return NotFound($"Veículo com a placa {placa} não encontrado.");
+            // Envia alerta
+            var dados = placaResponse?.Placa is not null ? 1 : 2;
+            await _hub.Clients.All.SendAsync("AlertaPlaca", new
+            {
+                Dados = dados,
+                Mensagem = placa
+            });
+
+            if (placaResponse is null)
+                return NotFound($"Veículo com a placa {placa} não encontrado.");
+
+            return Ok(placaResponse);
         }
 
+        [HttpPost("log")]
+        public async Task<ActionResult> LogVeiculo(LogRequest request)
+        {
+            var log = new Log
+            {
+                Id = request.Id == Guid.Empty ? Guid.NewGuid() : request.Id,
+                Placa = request.Placa,
+                DataHora = request.DataHora,
+                Tipo = request.Tipo
+            };
 
+            _context.Logs.Add(log);
+            await _context.SaveChangesAsync();
+            return Ok();
+        }
     }
 }

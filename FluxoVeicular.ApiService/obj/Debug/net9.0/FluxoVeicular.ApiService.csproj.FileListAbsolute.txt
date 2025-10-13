@@ -337,8 +337,6 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\rjsmcshtml.dswa.cache.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\scopedcss\bundle\FluxoVeicular.ApiService.styles.css
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\tzxjg6is5z-n8rndlt7dy.gz
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\0wz98yz2xy-ofbdodmtsc.gz
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.build.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.build.json.cache
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\staticwebassets.development.json
@@ -360,3 +358,5 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Common.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.Net.ServerSentEvents.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\tzxjg6is5z-jk5eo7zo4m.gz
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\0wz98yz2xy-tjzqk7tnel.gz

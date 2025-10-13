@@ -3,16 +3,22 @@
         <MudText Typo="Typo.h6">@Mensagem</MudText>
     </DialogContent>
     <DialogActions>
+        @if(Tipo == TipoTela.SolicitacaoAcesso){
         <MudButton Color="Color.Error" OnClick="@(() => MudDialog.Close(DialogResult.Ok("Negar")))">
             Negar Acesso
         </MudButton>
         <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => MudDialog.Close(DialogResult.Ok("Cadastrar")))">
             Cadastrar
         </MudButton>
+        }
+        @if(Tipo == TipoTela.AcessoLiberado){
+        <MudButton Color="Color.Primary" Variant="Variant.Filled" OnClick="@(() => MudDialog.Close(DialogResult.Ok("Liberado")))">
+            Fechar
+        </MudButton>
+        }
+
+
     </DialogActions>
 </MudDialog>
 
-@code {
-    [CascadingParameter] IMudDialogInstance MudDialog { get; set; } = default!;
-    [Parameter] public string Mensagem { get; set; } = string.Empty;
-}
+

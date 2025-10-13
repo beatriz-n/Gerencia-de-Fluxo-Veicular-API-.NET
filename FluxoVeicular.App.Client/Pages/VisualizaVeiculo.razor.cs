@@ -1,5 +1,6 @@
-﻿using FluxoVeicular.ServiceDefaults.Responses;
-using FluxoVeicular.Web.ServiceApi;
+﻿using FluxoVeicular.App.Client.Response;
+using FluxoVeicular.App.Client.ServiceApi;
+
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
 
