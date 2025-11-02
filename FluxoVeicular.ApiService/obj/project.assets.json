@@ -5779,8 +5779,8 @@
     },
     "FluxoVeicular.Infra/1.0.0": {
       "type": "project",
-      "path": "../FluxoVeicular.ServiceDefaults/FluxoVeicular.Infra.csproj",
-      "msbuildProject": "../FluxoVeicular.ServiceDefaults/FluxoVeicular.Infra.csproj"
+      "path": "../FluxoVeicular.Infra/FluxoVeicular.Infra.csproj",
+      "msbuildProject": "../FluxoVeicular.Infra/FluxoVeicular.Infra.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5828,8 +5828,8 @@
             "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj": {
               "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj"
             },
-            "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj": {
-              "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj"
+            "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Infra\\FluxoVeicular.Infra.csproj": {
+              "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.Infra\\FluxoVeicular.Infra.csproj"
             }
           }
         }

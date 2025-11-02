@@ -4,11 +4,11 @@ VisualStudioVersion = 18.0.11123.170 d18.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.ApiService", "FluxoVeicular.ApiService\FluxoVeicular.ApiService.csproj", "{082D3043-B9F6-E096-3786-56371D054640}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.Infra", "FluxoVeicular.ServiceDefaults\FluxoVeicular.Infra.csproj", "{79C1CF6C-0D25-2D5A-B9E1-A7A2D29722E5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.App", "FluxoVeicular.App\FluxoVeicular.App.csproj", "{9AC06F13-9D4D-04F7-4295-DECB79CBD282}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.App.Client", "FluxoVeicular.App.Client\FluxoVeicular.App.Client.csproj", "{C751D96A-5CF0-FD53-E81C-F908B647F81A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FluxoVeicular.Infra", "FluxoVeicular.Infra\FluxoVeicular.Infra.csproj", "{D090FF4E-3C0F-BFFC-8BE1-D88706E7BF19}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,10 +20,6 @@ Global
 		{082D3043-B9F6-E096-3786-56371D054640}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{082D3043-B9F6-E096-3786-56371D054640}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{082D3043-B9F6-E096-3786-56371D054640}.Release|Any CPU.Build.0 = Release|Any CPU
-		{79C1CF6C-0D25-2D5A-B9E1-A7A2D29722E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{79C1CF6C-0D25-2D5A-B9E1-A7A2D29722E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{79C1CF6C-0D25-2D5A-B9E1-A7A2D29722E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{79C1CF6C-0D25-2D5A-B9E1-A7A2D29722E5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9AC06F13-9D4D-04F7-4295-DECB79CBD282}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -32,6 +28,10 @@ Global
 		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C751D96A-5CF0-FD53-E81C-F908B647F81A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D090FF4E-3C0F-BFFC-8BE1-D88706E7BF19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D090FF4E-3C0F-BFFC-8BE1-D88706E7BF19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D090FF4E-3C0F-BFFC-8BE1-D88706E7BF19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D090FF4E-3C0F-BFFC-8BE1-D88706E7BF19}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
