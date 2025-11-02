@@ -36,8 +36,8 @@
               "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj": {
                 "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.App.Client\\FluxoVeicular.App.Client.csproj"
               },
-              "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
-                "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj"
+              "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj": {
+                "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj"
               }
             }
           }
@@ -52,7 +52,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -90,7 +90,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.2.25502.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
@@ -135,7 +135,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -152,13 +152,13 @@
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.8, )",
+              "version": "[9.0.10, )",
               "autoReferenced": true
             },
             "Microsoft.NET.Sdk.WebAssembly.Pack": {
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.8, )",
+              "version": "[9.0.10, )",
               "autoReferenced": true
             },
             "MudBlazor": {
@@ -180,7 +180,7 @@
           "downloadDependencies": [
             {
               "name": "Microsoft.NETCore.App.Runtime.Mono.browser-wasm",
-              "version": "[9.0.8, 9.0.8]"
+              "version": "[9.0.10, 9.0.10]"
             }
           ],
           "frameworkReferences": {
@@ -188,7 +188,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.2.25502.107/PortableRuntimeIdentifierGraph.json"
         }
       },
       "runtimes": {
@@ -197,12 +197,12 @@
         }
       }
     },
-    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj": {
+    "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
-        "projectName": "FluxoVeicular.ServiceDefaults",
-        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.ServiceDefaults.csproj",
+        "projectUniqueName": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj",
+        "projectName": "FluxoVeicular.Infra",
+        "projectPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\FluxoVeicular.Infra.csproj",
         "packagesPath": "C:\\Users\\beatr\\.nuget\\packages\\",
         "outputPath": "C:\\TCC\\Gerencia-de-Fluxo-Veicular-API-.NET\\FluxoVeicular.ServiceDefaults\\obj\\",
         "projectStyle": "PackageReference",
@@ -242,7 +242,7 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "9.0.300"
+        "SdkAnalysisLevel": "10.0.100"
       },
       "frameworks": {
         "net9.0": {
@@ -305,7 +305,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.100-rc.2.25502.107/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\FluxoVeicular.App.Client\FluxoVeicular.App.Client.csproj" />
-    <ProjectReference Include="..\FluxoVeicular.ServiceDefaults\FluxoVeicular.ServiceDefaults.csproj" />
+    <ProjectReference Include="..\FluxoVeicular.ServiceDefaults\FluxoVeicular.Infra.csproj" />
   </ItemGroup>
 
 </Project>

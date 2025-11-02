@@ -330,8 +330,6 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.App.Client.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.ServiceDefaults.pdb
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.App.Client.pdb
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\rjimswa.dswa.cache.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\rjsmrazor.dswa.cache.json
@@ -358,5 +356,8 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.Http.Connections.Common.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\Microsoft.AspNetCore.SignalR.Client.dll
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\System.Net.ServerSentEvents.dll
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\tzxjg6is5z-jk5eo7zo4m.gz
-C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\0wz98yz2xy-tjzqk7tnel.gz
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\tzxjg6is5z-{0}-jk5eo7zo4m-jk5eo7zo4m.gz
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\compressed\0wz98yz2xy-{0}-tjzqk7tnel-tjzqk7tnel.gz
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\obj\Debug\net9.0\swae.build.ex.cache
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.Infra.dll
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.ApiService\bin\Debug\net9.0\FluxoVeicular.Infra.pdb
