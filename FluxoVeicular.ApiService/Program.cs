@@ -1,4 +1,5 @@
-﻿using FluxoVeicular.ServiceDefaults.Context;
+﻿using FluxoVeicular.Infra.Services;
+using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Services;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,6 +12,7 @@ builder.Services.AddDbContext<FluxoVeicularContext>(options =>
 
 // Serviços
 builder.Services.AddScoped<VeiculoPlacaService>();
+builder.Services.AddScoped<DashboardService>();
 
 // Controllers + Swagger
 builder.Services.AddControllers();

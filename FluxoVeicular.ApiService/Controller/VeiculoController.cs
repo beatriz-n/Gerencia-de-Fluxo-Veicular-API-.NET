@@ -1,5 +1,7 @@
 ﻿using FluxoVeicular.App.Client.Request;
 using FluxoVeicular.App.Client.Response;
+using FluxoVeicular.App.Client.Response.Dashboards;
+using FluxoVeicular.Infra.Services;
 using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Entities;
 using FluxoVeicular.ServiceDefaults.Services;
@@ -17,10 +19,12 @@ namespace FluxoVeicular.ApiService.Controller
         private readonly FluxoVeicularContext _context;
         private readonly VeiculoPlacaService _service;
         private readonly IHubContext<NotificacaoHub> _hub;
-        public VeiculosController(FluxoVeicularContext context, VeiculoPlacaService service, IHubContext<NotificacaoHub> hub)
+        private readonly DashboardService _dashboardService;
+        public VeiculosController(FluxoVeicularContext context, DashboardService dashboardService, VeiculoPlacaService service, IHubContext<NotificacaoHub> hub)
         {
             _context = context;
             _service = service;
+            _dashboardService = dashboardService;
             _hub = hub;
         }
 
@@ -171,5 +175,7 @@ namespace FluxoVeicular.ApiService.Controller
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+
     }
 }

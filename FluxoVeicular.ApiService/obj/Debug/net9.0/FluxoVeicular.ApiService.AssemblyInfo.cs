@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("FluxoVeicular.ApiService")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+47e6e277ad13f2d37f90d13fbbaaf386cb8e5772")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8114253c3229238c90f0f1e64b5169bcdb8bb605")]
 [assembly: System.Reflection.AssemblyProductAttribute("FluxoVeicular.ApiService")]
 [assembly: System.Reflection.AssemblyTitleAttribute("FluxoVeicular.ApiService")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
