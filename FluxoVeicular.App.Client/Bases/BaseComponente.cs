@@ -25,6 +25,7 @@ namespace FluxoVeicular.App.Client.Bases
 
             int valorDados = jsonObject.GetProperty("dados").GetInt32();
             string valorMensagem = jsonObject.GetProperty("mensagem").GetString() ?? string.Empty;
+            string tipoAcessoStr = jsonObject.GetProperty("tipoAcesso").GetString() ?? "Entrada";
 
             DialogParameters parameters;
             DialogOptions options = new DialogOptions
@@ -37,6 +38,8 @@ namespace FluxoVeicular.App.Client.Bases
 
             if (valorDados == 1)
             {
+                if (tipoAcessoStr == "Saida")
+                    return;
                 // Acesso Liberado
                 parameters = new DialogParameters
                 {

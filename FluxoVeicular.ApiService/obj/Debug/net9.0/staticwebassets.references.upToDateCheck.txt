@@ -154,3 +154,10 @@ C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\ne
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
 C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json
+C:\TCC\Gerencia-de-Fluxo-Veicular-API-.NET\FluxoVeicular.App.Client\obj\Debug\net9.0\staticwebassets.build.json

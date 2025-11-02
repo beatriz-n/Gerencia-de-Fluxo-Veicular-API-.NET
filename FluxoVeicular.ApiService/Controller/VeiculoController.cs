@@ -1,4 +1,5 @@
-﻿using FluxoVeicular.App.Client.Request;
+﻿using FluxoVeicular.App.Client.Enum;
+using FluxoVeicular.App.Client.Request;
 using FluxoVeicular.App.Client.Response;
 using FluxoVeicular.App.Client.Response.Dashboards;
 using FluxoVeicular.Infra.Services;
@@ -138,6 +139,8 @@ namespace FluxoVeicular.ApiService.Controller
             var placaResponse = await _service.GetVeiculoByPlacaAsync(placa);
             var proximoAcesso = await _service.GetProximoAcessoAsync(placa);
 
+            var tipoAcesso = proximoAcesso == TipoAcesso.Entrada ? "Entrada" : "Saida";
+
             // Sempre grava log
             await LogVeiculo(new LogRequest
             {
@@ -151,7 +154,8 @@ namespace FluxoVeicular.ApiService.Controller
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
                 Dados = dados,
-                Mensagem = placa
+                Mensagem = placa,
+                TipoAcesso = tipoAcesso
             });
 
             if (placaResponse is null)
