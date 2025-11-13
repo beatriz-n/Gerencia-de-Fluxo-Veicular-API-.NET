@@ -135,20 +135,24 @@ namespace FluxoVeicular.ApiService.Controller
             var placaResponse = await _service.GetVeiculoByPlacaAsync(placa);
             var proximoAcesso = await _service.GetProximoAcessoAsync(placa);
 
-            // Sempre grava log
+            // Usa a placa encontrada (ou a original, se não achou)
+            var placaFinal = placaResponse?.Placa ?? placa;
+
+            // Grava log com a placa final
             await LogVeiculo(new LogRequest
             {
-                Placa = placa,
+                Placa = placaFinal,
                 DataHora = DateTime.UtcNow,
                 Tipo = proximoAcesso.ToString()
             });
 
-            // Envia alerta
+            // Envia alerta com a placa final
             var dados = placaResponse?.Placa is not null ? 1 : 2;
+
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
                 Dados = dados,
-                Mensagem = placa
+                Mensagem = placaFinal
             });
 
             if (placaResponse is null)
