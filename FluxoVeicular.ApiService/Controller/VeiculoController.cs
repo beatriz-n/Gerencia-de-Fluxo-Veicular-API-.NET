@@ -167,6 +167,12 @@ namespace FluxoVeicular.ApiService.Controller
         [HttpPost("log")]
         public async Task<ActionResult> LogVeiculo(LogRequest request)
         {
+            var existingVeiculo = await _context.Veiculos
+                .FirstOrDefaultAsync(v => v.Placa == request.Placa);
+
+            if (existingVeiculo is null)
+                return NotFound($"Veículo com a placa {request.Placa} não encontrado.");
+
             var log = new Log
             {
                 Id = request.Id == Guid.Empty ? Guid.NewGuid() : request.Id,
