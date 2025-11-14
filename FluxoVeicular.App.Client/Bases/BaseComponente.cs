@@ -9,11 +9,13 @@ namespace FluxoVeicular.App.Client.Bases
 {
     public abstract class BaseComponente : ComponentBase, IAsyncDisposable
     {
+        // Removido [Inject] HubConnection
         private HubConnection Hub { get; set; } = default!;
 
         [Inject] protected IDialogService DialogService { get; set; } = default!;
         [Inject] protected NavigationManager Navigation { get; set; } = default!;
         [Inject] protected ISnackbar Snackbar { get; set; } = default!;
+
         private IDisposable? _alertSubscription;
 
         protected virtual async Task MostrarDialogoSolicitacao(object dados)
@@ -23,6 +25,7 @@ namespace FluxoVeicular.App.Client.Bases
 
             int valorDados = jsonObject.GetProperty("dados").GetInt32();
             string valorMensagem = jsonObject.GetProperty("mensagem").GetString() ?? string.Empty;
+            string tipoAcessoStr = jsonObject.GetProperty("tipoAcesso").GetString() ?? "Entrada";
 
             DialogParameters parameters;
             DialogOptions options = new DialogOptions
@@ -35,6 +38,8 @@ namespace FluxoVeicular.App.Client.Bases
 
             if (valorDados == 1)
             {
+                if (tipoAcessoStr == "Saida")
+                    return;
                 // Acesso Liberado
                 parameters = new DialogParameters
                 {

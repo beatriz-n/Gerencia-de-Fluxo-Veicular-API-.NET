@@ -1,3 +1,28 @@
-bin/
-obj/
+# Ignore pastas de build de todos os projetos
+**/bin/
+**/obj/
+
+# Ignore arquivos temporários do Visual Studio
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
 .vs/
+
+# Rider IDE
+.idea/
+
+# Resharper
+*.ReSharper.*
+_ReSharper*/
+
+# Logs
+*.log
+
+# Pacotes NuGet
+*.nupkg
+*.snupkg
+.nuget/
+
+# Publicações
+publish/

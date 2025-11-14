@@ -28,6 +28,7 @@ builder.Services.AddScoped(sp => new HttpClient
 
 // Registrar serviços
 builder.Services.AddScoped<VeiculoServiceApi>();
+builder.Services.AddScoped<DashboardsServiceApi>();
 
 // MudBlazor
 builder.Services.AddMudServices();

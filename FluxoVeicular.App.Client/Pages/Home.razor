@@ -5,13 +5,59 @@
 <PageTitle>Home</PageTitle>
 
 <MudContainer MaxWidth="MaxWidth.Large" Class="mt-4">
-    <MudText Typo="Typo.h4" Class="mb-2">Bem-vindo ao Aplicativo!</MudText>
+    <MudText Typo="Typo.h4" Class="mb-2">Bem-vindo!</MudText>
     <MudText Typo="Typo.body1" Class="mb-4">
         Esta é a página inicial. Aqui você pode acessar as principais funcionalidades do sistema de gestão de veículos de forma rápida e intuitiva.
     </MudText>
 
+    <!-- Dashboard Cards -->
+    <MudGrid Class="mb-6">
+
+        <MudItem xs="12" md="4" sm="4">
+            <MudCard Class="h-100">
+                <MudCardContent>
+                    <div class="d-flex align-center justify-space-between">
+                        <MudText Typo="Typo.h6">Entradas Hoje</MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.Input" />
+                    </div>
+                    <MudText Typo="Typo.h4" Class="mt-2">@DashboardsResponse?.TotalEntradasHoje</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary">Veículos que entraram hoje</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="4" sm="4">
+            <MudCard Class="h-100">
+                <MudCardContent>
+                    <div class="d-flex align-center justify-space-between">
+                        <MudText Typo="Typo.h6">Saídas Hoje</MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.Output" />
+                    </div>
+                    <MudText Typo="Typo.h4" Class="mt-2">@DashboardsResponse?.TotalSaidasHoje</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary">Veículos que saíram hoje</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+
+        <MudItem xs="12" md="4" sm="4">
+            <MudCard Class="h-100">
+                <MudCardContent>
+                    <div class="d-flex align-center justify-space-between">
+                        <MudText Typo="Typo.h6">Veículos na Garagem</MudText>
+                        <MudIcon Icon="@Icons.Material.Filled.DirectionsCar" />
+                    </div>
+                    <MudText Typo="Typo.h4" Class="mt-2">@DashboardsResponse?.TotalVeiculosGaragem</MudText>
+                    <MudText Typo="Typo.body2" Color="Color.Secondary">Presentes no momento</MudText>
+                </MudCardContent>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+
+
+    <!-- Conteúdo Original -->
     <MudPaper Elevation="1" Class="pa-4 mb-4">
-        <MudText Typo="Typo.h6">Faça a Gestão de Veículos</MudText>
+        <MudText Typo="Typo.h6">Faça a Gestão de Fluxo de Veículos  ✔️</MudText>
+
         <MudText Typo="Typo.body2">
             Cadastre, edite e organize todos os veículos da sua frota. Você pode consultar informações detalhadas, histórico de manutenções e status de cada veículo de forma simples.
         </MudText>
@@ -21,10 +67,9 @@
     </MudPaper>
 
     <MudPaper Elevation="1" Class="pa-4 mb-4">
-        <MudText Typo="Typo.h6">Valide a Entrada</MudText>
+        <MudText Typo="Typo.h6">Valide a Entrada ✔️</MudText>
         <MudText Typo="Typo.body2">
-            O sistema identifica automaticamente veículos sem registro e permite liberar ou bloquear entradas de forma segura e rápida, garantindo controle total sobre o acesso.
+            O sistema identifica automaticamente veículos sem registro e permite liberar ou bloquear entradas de forma segura e rápida, garantindo controle total sobre o acesso. <b>Fique atento as notificações!</b>
         </MudText>
-
     </MudPaper>
 </MudContainer>

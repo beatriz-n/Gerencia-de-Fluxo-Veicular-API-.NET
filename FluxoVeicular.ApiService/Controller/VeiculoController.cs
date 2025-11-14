@@ -1,6 +1,8 @@
 ﻿using FluxoVeicular.App.Client.Enum;
 using FluxoVeicular.App.Client.Request;
 using FluxoVeicular.App.Client.Response;
+using FluxoVeicular.App.Client.Response.Dashboards;
+using FluxoVeicular.Infra.Services;
 using FluxoVeicular.ServiceDefaults.Context;
 using FluxoVeicular.ServiceDefaults.Entities;
 using FluxoVeicular.ServiceDefaults.Services;
@@ -18,10 +20,12 @@ namespace FluxoVeicular.ApiService.Controller
         private readonly FluxoVeicularContext _context;
         private readonly VeiculoPlacaService _service;
         private readonly IHubContext<NotificacaoHub> _hub;
-        public VeiculosController(FluxoVeicularContext context, VeiculoPlacaService service, IHubContext<NotificacaoHub> hub)
+        private readonly DashboardService _dashboardService;
+        public VeiculosController(FluxoVeicularContext context, DashboardService dashboardService, VeiculoPlacaService service, IHubContext<NotificacaoHub> hub)
         {
             _context = context;
             _service = service;
+            _dashboardService = dashboardService;
             _hub = hub;
         }
 
@@ -137,6 +141,9 @@ namespace FluxoVeicular.ApiService.Controller
 
             var placaFinal = placaResponse?.Placa ?? placa;
 
+            var tipoAcesso = proximoAcesso == TipoAcesso.Entrada ? "Entrada" : "Saida";
+
+            // Sempre grava log
             await LogVeiculo(new LogRequest
             {
                 Placa = placaFinal,
@@ -149,7 +156,8 @@ namespace FluxoVeicular.ApiService.Controller
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
                 Dados = dados,
-                Mensagem = placaFinal
+                Mensagem = placa,
+                TipoAcesso = tipoAcesso
             });
 
             if (placaResponse is null)
@@ -161,6 +169,12 @@ namespace FluxoVeicular.ApiService.Controller
         [HttpPost("log")]
         public async Task<ActionResult> LogVeiculo(LogRequest request)
         {
+            var existingVeiculo = await _context.Veiculos
+                .FirstOrDefaultAsync(v => v.Placa == request.Placa);
+
+            if (existingVeiculo is null)
+                return NotFound($"Veículo com a placa {request.Placa} não encontrado.");
+
             var log = new Log
             {
                 Id = request.Id == Guid.Empty ? Guid.NewGuid() : request.Id,
@@ -173,5 +187,7 @@ namespace FluxoVeicular.ApiService.Controller
             await _context.SaveChangesAsync();
             return Ok();
         }
+
+
     }
 }

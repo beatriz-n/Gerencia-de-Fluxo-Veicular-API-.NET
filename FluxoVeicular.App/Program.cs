@@ -20,6 +20,7 @@ builder.Services.AddScoped(sp => new HttpClient
 
 // Registrar serviço da API
 builder.Services.AddScoped<VeiculoServiceApi>();
+builder.Services.AddScoped<DashboardsServiceApi>();
 
 
 
