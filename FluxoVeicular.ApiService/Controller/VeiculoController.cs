@@ -156,12 +156,12 @@ namespace FluxoVeicular.ApiService.Controller
             await _hub.Clients.All.SendAsync("AlertaPlaca", new
             {
                 Dados = dados,
-                Mensagem = placa,
+                Mensagem = placaFinal,
                 TipoAcesso = tipoAcesso
             });
 
             if (placaResponse is null)
-                return NotFound($"Veículo com a placa {placa} não encontrado.");
+                return NotFound($"Veículo com a placa {placaFinal} não encontrado.");
 
             return Ok(placaResponse);
         }
