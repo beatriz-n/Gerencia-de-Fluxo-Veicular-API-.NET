@@ -54,6 +54,8 @@ ficará algo assim:
 
 É normal demorar um pouco mas ao final você irá ter sua tabela "migrada" para seu banco de dados.
 
+Obs: provavelmente o terminal irá recomendar a restauração do dotnet ef migration então apenas digite o comando recomendado
+
 ## Instalação do HeidiSQL (Bônus)
 
 A instalação do **HeidiSQL** é opcional, mas recomendada para facilitar a visualização dos dados do PostgreSQL.  
@@ -63,6 +65,9 @@ Acesse: https://www.heidisql.com/download.php e instale.
 
 - Next, Next, Next…
 - HeidiSQL instalado.
+
+## Executando Nossa Aplicação
+ Com tudo configurado, é so clicar no "Play" verde no menu superior, a solução importada já garante a configuração dos projetos de inicialização, caso dúvidas, assita ao video de link anexado acima.
 
 ### Conectando ao Banco de Dados
 
