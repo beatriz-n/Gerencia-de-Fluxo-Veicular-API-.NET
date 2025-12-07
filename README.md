@@ -6,6 +6,10 @@ A API é o back-end que gerencia os dados de acesso e veículos. O sistema de vi
 
 # Começando...
 
+## Material de apoio
+
+Acesse a playlist: https://www.youtube.com/playlist?list=PLY7efPd_oNTzXY3Wfg1hztHcDqlsu2XHY
+
 ## Instalação .NET
 
 Instale o .Net seguindo este link https://dotnet.microsoft.com/pt-br/download
