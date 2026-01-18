@@ -92,7 +92,10 @@ Para conectar ao PostgreSQL pelo HeidiSQL:
 Pronto! Você poderá visualizar todas as tabelas do sistema através do HeidiSQL.
 
 
-
+### Contato
+Discord: showtriz
+Email: beatriznespolid@gmail.com
+Telefone: peça para o orientador
 
 
 
